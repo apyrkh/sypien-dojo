@@ -1,0 +1,10 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+.idea/*
+!.idea/codeStyles
+.next/
+node_modules/
+
+.env*.local
+*.log
+*.tsbuildinfo
+
