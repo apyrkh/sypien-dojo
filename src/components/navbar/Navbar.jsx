@@ -1,65 +1,63 @@
 'use client'
-import Logo from 'public/logo.png'
+import ContactUsButton from '@/components/navbar/ContactUsButton'
+import logoSrc from '@/components/navbar/logo.png'
+import { getText } from '@/utils/textUtils'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import styles from './navbar.module.css'
-import Button from '@/components/button/Button'
 
 const links = [
   {
-    id: 1,
-    title: 'Home',
+    title: getText('page.home'),
     url: '/',
   },
   {
-    id: 2,
-    title: 'News',
+    title: getText('page.news'),
     url: '/news',
   },
   {
-    id: 3,
-    title: 'Club History',
+    title: getText('page.club'),
     url: '/history',
   },
   {
-    id: 4,
-    title: 'Achievements',
+    title: getText('page.achievements'),
     url: '/achievements',
   },
   {
-    id: 5,
-    title: 'Gallery',
+    title: getText('page.gallery'),
     url: '/gallery',
   },
   {
-    id: 6,
-    title: 'Camps',
+    title: getText('page.camps'),
     url: '/camps',
   },
   {
-    id: 7,
-    title: 'Information',
+    title: getText('page.information'),
     url: '/information',
   },
 ]
 
-const Navbar = ({ height, width, text }) => {
+const Navbar = () => {
   return (
     <div className={styles.container}>
-      <div className={styles.logo}>
-        <Link href="/">
-          <Image className={styles.img} src={Logo} alt="logo" fill={true} />
-        </Link>
-      </div>
+      <Link href="/" className={styles.logo_link}>
+        <Image
+          className={styles.logo_img}
+          src={logoSrc}
+          alt={getText('navbar.logo.alt')}
+        />
+      </Link>
+
       <div className={styles.links}>
         {links.map((link) => (
-          <Link href={link.url} key={link.id} className={styles.link}>
+          <Link key={link.url} href={link.url} className={styles.link}>
             {link.title}
           </Link>
         ))}
       </div>
-      <Button height={height} width={width} text={text} />
+
+      <ContactUsButton />
     </div>
   )
 }

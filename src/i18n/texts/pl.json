@@ -1,4 +1,16 @@
 {
+  "btn.contact_us": "Kontakt",
+
+  "navbar.logo.alt": "Logo",
+
+  "page.home": "Główna",
+  "page.news": "Aktualności",
+  "page.club": "Klub",
+  "page.achievements": "Osiągnięcia",
+  "page.gallery": "Galeria",
+  "page.camps": "Obozy",
+  "page.information": "Informacje",
+
   "home.meta.title": "Wrocławski Klub Karate Kyokushin - Sypień Dojo",
   "home.meta.description": "Wrocławski Klub Karate Kyokushin - Agnieszka i Sylwester Sypień | Sztuki Walki we Wrocławiu.",
   "home.meta.keywords": "Karate, Sztuki Walki, Kyokushin, Wrocław, Agnieszka Sypień, Sylwester Sypień"

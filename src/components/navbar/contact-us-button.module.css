@@ -1,0 +1,13 @@
+.container {
+  height: 40px;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+
+  color: white;
+  background-color: rgb(218, 4, 4);
+}
