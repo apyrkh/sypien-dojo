@@ -1,0 +1,31 @@
+.container{
+    z-index: 10;
+    display: flex;
+    height: 100px;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgb(22, 22, 22));
+}
+
+.img{
+    position: unset !important;
+    width: 200px !important;
+    object-fit: contain;
+}
+
+.links{
+    display: flex;
+    gap:35px;
+}
+
+.link{
+    opacity: 0.5;
+    color: #FFF;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.link:hover{
+    opacity: 1;
+}
