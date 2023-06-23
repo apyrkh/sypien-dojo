@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import styles from './navbar.module.css'
-import Button from '@/components/button/Button'
+import ContactUsButton from '@/components/contactUsButton/ContactUsButton'
 
 const links = [
   {
@@ -44,7 +44,7 @@ const links = [
   },
 ]
 
-const Navbar = ({ height, width, text }) => {
+const Navbar = ({ color }) => {
   return (
     <div className={styles.container}>
       <div className={styles.logo}>
@@ -59,7 +59,7 @@ const Navbar = ({ height, width, text }) => {
           </Link>
         ))}
       </div>
-      <Button height={height} width={width} text={text} />
+      <ContactUsButton color={color} />
     </div>
   )
 }
