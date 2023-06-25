@@ -1,6 +1,12 @@
 .a-main {
+  display: flex;
+  flex-direction: column;
 }
 
+.welcomeContainer {
+  height: 600px;
+}
+/* will be fixed as photo will be choosed */
 .textContainer {
   display: flex;
   flex-direction: column;
@@ -9,28 +15,29 @@
   position: absolute;
   left: 100px;
 }
+/* ......... */
 
-.title {
+.titleContainer {
   display: flex;
   flex-direction: column;
   line-height: 50px;
   margin-bottom: 20px;
 }
 
-.title h3 {
-  color: black;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 30px;
+.desc {
+  margin-bottom: 50px;
 }
 
-.title h1 {
+.title {
   color: #ff0909;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 100px;
 }
 
-.desc {
-  margin-bottom: 50px;
+.coachContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

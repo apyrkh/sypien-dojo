@@ -2,13 +2,10 @@ import styles from './button.module.css'
 
 import React from 'react'
 
-const Button = ({ height, width, text, color }) => {
+const Button = ({ color, children }) => {
   return (
-    <div
-      className={styles.container}
-      style={{ height: height, width: width, backgroundColor: color }}
-    >
-      {text}
+    <div className={styles.container} style={{ backgroundColor: color }}>
+      {children}
     </div>
   )
 }
