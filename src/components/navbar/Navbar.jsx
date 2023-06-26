@@ -5,6 +5,7 @@ import Link from 'next/link'
 import React from 'react'
 import styles from './navbar.module.css'
 import ContactUsButton from '@/components/contactUsButton/ContactUsButton'
+import ThemeToggle from '@/components/themeToggle/ThemeToggle'
 
 const links = [
   {
@@ -58,6 +59,7 @@ const Navbar = ({ color }) => {
             {link.title}
           </Link>
         ))}
+        <ThemeToggle color={color} />
       </div>
       <ContactUsButton color={color} />
     </div>
