@@ -4,6 +4,7 @@ import ColorBar from '@/components/colorBar/ColorBar'
 import Button from '@/components/button/Button'
 import styles from './page.module.css'
 import Coach from '@/components/coach/Coach'
+import Footer from '@/components/footer/Footer'
 
 const coaches = [
   {
@@ -23,8 +24,9 @@ const pageColor = '#E31B1B'
 export default function Home() {
   return (
     <main className={styles.aMain}>
-      <Navbar color={pageColor} />
+      {/* <Navbar color={pageColor} /> */}
       <div className={styles.welcomeContainer}>
+        <Navbar color={pageColor} />
         <div className={styles.imgContainer}>
           <Image
             src="https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/348869093_954863232211020_1462760187902663962_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=BepitBOQ3UUAX8k82oc&_nc_ht=scontent-waw1-1.xx&oh=00_AfCPFEEatI-oQTeQ3pkZYwDUfDL0NrukT3v6Nnou1jqSDA&oe=649EB593"
@@ -52,7 +54,7 @@ export default function Home() {
 
       <section className="coach">
         <div className={styles.coachContainer}>
-          <h1 className={styles.title}>Our coaches</h1>
+          <h1>Our coaches</h1>
           {coaches.map((coach, index) => (
             <Coach
               key={index}
@@ -64,19 +66,28 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="schedule">
+      <section id="schedule">
         <div className={styles.scheduleContainer}>
           <h1>Schedule</h1>
           {/* what can we do here? */}
         </div>
       </section>
 
-      <section className="instagram">
+      <section id="instagram">
         <div className={styles.instagramContainer}>
           <h1>Instagram</h1>
           {/* slider with fetched data from insta */}
           <Button color={pageColor}>More photos</Button>
         </div>
+      </section>
+
+      <section id="findus">
+        <div className={styles.findUsContainer}>
+          <h1>find us</h1>
+        </div>
+      </section>
+      <section id="footer">
+        <Footer color={pageColor} />
       </section>
     </main>
   )
