@@ -6,6 +6,8 @@ import styles from './page.module.css'
 import Coach from '@/components/coach/Coach'
 import Footer from '@/components/footer/Footer'
 import Slider from '@/components/slider/Slider'
+import Link from 'next/link'
+import EmbedMap from '@/components/EmbedMap/EmbedMap'
 
 const coaches = [
   {
@@ -77,21 +79,21 @@ export default function Home() {
 
       <section id="instagram">
         <div className={styles.instagramContainer}>
-          <h1>Instagram</h1>
+          <h1>Facebook</h1>
           <Slider />
-          <Button color={pageColor}>More photos</Button>
+          <Link href="https://www.facebook.com/karateIchibanSypienDojo">
+            <Button color={pageColor}>More photos</Button>
+          </Link>
         </div>
       </section>
 
       <section id="findus">
         <div className={styles.findUsContainer}>
           <h1>find us</h1>
-          <div className={styles.mapContainer}></div>
+          <EmbedMap />
         </div>
       </section>
-      <section id="footer">
-        <Footer color={pageColor} />
-      </section>
+      <Footer color={pageColor} />
     </main>
   )
 }

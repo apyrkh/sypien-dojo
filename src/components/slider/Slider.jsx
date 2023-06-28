@@ -10,12 +10,11 @@ import Link from 'next/link'
 const Slider = () => {
   const [sliderRef] = useKeenSlider({
     loop: true,
-    mode: 'free',
-    slides: {
-      perView: 'auto',
-    },
+    mode: 'snap',
+    rtl: false,
+    slides: { perView: 'auto' },
   })
-  console.log(sliderData)
+
   return (
     <div ref={sliderRef} className="keen-slider">
       {sliderData.map((photo, index) => (
@@ -27,8 +26,7 @@ const Slider = () => {
           <Image
             src={photo.src}
             alt={photo.alt}
-            width={300}
-            height={300}
+            fill={true}
             className="number-slide"
           />
         </Link>
