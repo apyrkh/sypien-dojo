@@ -4,7 +4,7 @@
   align-items: center;
 }
 
-.circle {
+.background {
   display: flex;
   background-color: red;
   height: 300px;
@@ -12,7 +12,7 @@
   border-radius: 50%;
 }
 
-.text {
+.textContainer {
   max-width: 400px;
 }
 .name {

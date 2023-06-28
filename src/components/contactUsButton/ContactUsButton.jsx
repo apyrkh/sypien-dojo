@@ -1,12 +1,17 @@
 import styles from './contactusbtn.module.css'
 
 import React from 'react'
+import Link from 'next/link'
 
 const ContactUsButton = ({ color }) => {
   return (
-    <div className={styles.container} style={{ backgroundColor: color }}>
+    <Link
+      href="/"
+      className={styles.container}
+      style={{ backgroundColor: color }}
+    >
       Contact us
-    </div>
+    </Link>
   )
 }
 

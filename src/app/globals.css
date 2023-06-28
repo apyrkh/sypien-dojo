@@ -1,3 +1,10 @@
+:root {
+  --dark-color: rgb(218, 218, 218);
+  --dark-bg: rgb(31, 0, 0);
+  --light-color: rgb(58, 58, 58);
+  --light-bg: rgb(255, 255, 255);
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -5,18 +12,21 @@
 }
 
 html {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 /* how to change color of the panels with mode toggle if max-width is set? */
 
 body {
-  /* max-width: 1280px; */
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   overflow-x: hidden;
+}
+
+main {
+  /* max-width: 1280px; */
+  width: 100vw;
 }
 
 .theme {
@@ -24,13 +34,13 @@ body {
 }
 
 .light {
-  background-color: rgb(255, 255, 255);
-  color: rgb(58, 58, 58);
+  background-color: var(--light-bg);
+  color: var(--light-color);
 }
 
 .dark {
-  background-color: rgb(31, 0, 0);
-  color: rgb(218, 218, 218);
+  background-color: var(--dark-bg);
+  color: var(--dark-color);
 }
 
 /* reset.css fix */

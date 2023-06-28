@@ -5,6 +5,7 @@ import Button from '@/components/button/Button'
 import styles from './page.module.css'
 import Coach from '@/components/coach/Coach'
 import Footer from '@/components/footer/Footer'
+import Slider from '@/components/slider/Slider'
 
 const coaches = [
   {
@@ -61,6 +62,7 @@ export default function Home() {
               name={coach.name}
               description={coach.description}
               direction={index % 2}
+              color={pageColor}
             />
           ))}
         </div>
@@ -76,7 +78,7 @@ export default function Home() {
       <section id="instagram">
         <div className={styles.instagramContainer}>
           <h1>Instagram</h1>
-          {/* slider with fetched data from insta */}
+          <Slider />
           <Button color={pageColor}>More photos</Button>
         </div>
       </section>
@@ -84,6 +86,7 @@ export default function Home() {
       <section id="findus">
         <div className={styles.findUsContainer}>
           <h1>find us</h1>
+          <div className={styles.mapContainer}></div>
         </div>
       </section>
       <section id="footer">
