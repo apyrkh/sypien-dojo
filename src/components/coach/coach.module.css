@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.background {
+  display: flex;
+  background-color: red;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+}
+
+.textContainer {
+  max-width: 400px;
+}
+.name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.desc {
+  opacity: 0.7;
+}

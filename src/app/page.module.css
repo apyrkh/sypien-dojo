@@ -1,3 +1,75 @@
 .a-main {
+  display: flex;
+  flex-direction: column;
+}
 
+.welcomeContainer {
+  height: 600px;
+  position: relative;
+}
+
+.imgContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.mainPhoto {
+  object-fit: cover;
+  z-index: 0;
+  filter: blur(3px) brightness(0.4);
+}
+
+/* will be fixed as photo will be choosed */
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  width: 300px;
+  margin: 50px 0 0 100px;
+  z-index: 2;
+}
+/* ......... */
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  line-height: 50px;
+  margin-bottom: 20px;
+}
+
+.desc {
+  margin-bottom: 50px;
+  color: rgb(255, 255, 255);
+}
+
+.title {
+  color: #ff0909;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 100px;
+}
+
+.coachContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.scheduleContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.instagramContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.findUsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

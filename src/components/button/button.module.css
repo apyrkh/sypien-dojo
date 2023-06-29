@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  text-transform: uppercase;
+  font-weight: bold;
+  height: 40px;
+  padding: 0 30px;
+  border-radius: 5px;
+  cursor: pointer;
+
+  color: white;
+}

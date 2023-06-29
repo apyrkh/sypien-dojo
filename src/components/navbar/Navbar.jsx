@@ -6,6 +6,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import styles from './navbar.module.css'
+import ContactUsButton from '@/components/contactUsButton/ContactUsButton'
+import ThemeToggle from '@/components/themeToggle/ThemeToggle'
 
 const links = [
   {
@@ -38,7 +40,7 @@ const links = [
   },
 ]
 
-const Navbar = () => {
+const Navbar = ({ color }) => {
   return (
     <div className={styles.container}>
       <Link href="/" className={styles.logo_link}>
@@ -55,9 +57,9 @@ const Navbar = () => {
             {link.title}
           </Link>
         ))}
+        <ThemeToggle color={color} />
       </div>
-
-      <ContactUsButton />
+      <ContactUsButton color={color} />
     </div>
   )
 }
