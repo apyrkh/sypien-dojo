@@ -3,6 +3,18 @@
   flex-direction: column;
 }
 
+/* will be fixed as photo will be choosed */
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  width: 300px;
+  margin: 50px 0 0 100px;
+  z-index: 2;
+}
+/* ......... */
+
 .welcomeContainer {
   height: 600px;
   position: relative;
@@ -16,20 +28,8 @@
 .mainPhoto {
   object-fit: cover;
   z-index: 0;
-  filter: blur(3px) brightness(0.4);
+  filter: blur(3px) brightness(0.4); /* fix this line (filter styling needs to be changed) */
 }
-
-/* will be fixed as photo will be choosed */
-.textContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  position: relative;
-  width: 300px;
-  margin: 50px 0 0 100px;
-  z-index: 2;
-}
-/* ......... */
 
 .titleContainer {
   display: flex;
