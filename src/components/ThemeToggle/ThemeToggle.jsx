@@ -33,10 +33,10 @@ const ThemeToggle = ({ color }) => {
   }, [])
 
   return (
-    <div class="theme-switch-wrapper">
-      <label class="theme-switch" for="checkbox">
+    <div className="theme-switch-wrapper">
+      <label className="theme-switch" htmlFor="checkbox">
         <input type="checkbox" id="checkbox" />
-        <div class="slider round" style={{ backgroundColor: color }}></div>
+        <div className="slider round" style={{ backgroundColor: color }}></div>
       </label>
     </div>
   )
