@@ -1,8 +1,17 @@
 :root {
-  --dark-color: rgb(218, 218, 218);
-  --dark-bg: rgb(31, 0, 0);
-  --light-color: rgb(58, 58, 58);
-  --light-bg: rgb(255, 255, 255);
+  --primary-color: #a45050;
+  --secondary-color: #625b71;
+  --font-color: #000000;
+  --bg-color: #fffbfe;
+  --heading-color: #f84842;
+}
+
+[data-theme='dark'] {
+  --primary-color: #ffbcbc;
+  --secondary-color: #ccc2dc;
+  --font-color: #cecece;
+  --bg-color: #1c1b1f;
+  --heading-color: #f84242;
 }
 
 * {
@@ -17,7 +26,10 @@ html {
 /* how to change color of the panels with mode toggle if max-width is set? */
 
 body {
+  background-color: var(--bg-color);
+  color: var(--font-color);
   display: flex;
+  width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -25,22 +37,8 @@ body {
 }
 
 main {
-  /* max-width: 1280px; */
+  max-width: 1024px;
   width: 100vw;
-}
-
-.theme {
-  transition: 1s all ease;
-}
-
-.light {
-  background-color: var(--light-bg);
-  color: var(--light-color);
-}
-
-.dark {
-  background-color: var(--dark-bg);
-  color: var(--dark-color);
 }
 
 /* reset.css fix */
@@ -65,7 +63,7 @@ sup {
 }
 
 h1 {
-  color: #f83636;
+  color: var(--heading-color);
   text-transform: uppercase;
   font-weight: bold;
   font-size: 100px;
@@ -74,7 +72,7 @@ h1 {
 /* h2 color will be fixes as mainPhoto will be choosed */
 
 h2 {
-  color: rgb(231, 231, 231);
+  color: var(--primary-color);
   text-transform: uppercase;
   font-weight: bold;
   font-size: 30px;

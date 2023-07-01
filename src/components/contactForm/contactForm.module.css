@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 30px;
+  border-radius: 10px;
+  color: black;
+  background-color: white;
+  z-index: 10;
+  /*  bad practice */
+  position: absolute;
+  right: 20px;
+  /* need to think about it */
+  gap: 10px;
+  box-shadow: 0 0 20px rgb(124, 124, 124);
+}
+
+.input,
+.textArea {
+  border: none;
+  background-color: rgb(219, 219, 219);
+  color: #555555;
+  padding: 10px;
+  border-radius: 10px;
+  width: 250px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+.title {
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
