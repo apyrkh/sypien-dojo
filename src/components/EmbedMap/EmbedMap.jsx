@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './embedMap.module.css'
+import ContactForm from '../contactForm/ContactForm'
 
 const EmbedMap = () => {
   return (
@@ -11,6 +12,7 @@ const EmbedMap = () => {
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
       ></iframe>
+      <ContactForm />
     </div>
   )
 }

@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+}
+
+.title {
+  font-size: 50px;
+  color: white;
+  font-size: bold;
+  text-transform: uppercase;
+}
+
+.desc {
+  color: white;
+  opacity: 0.6;
+}
