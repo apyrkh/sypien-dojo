@@ -1,3 +1,31 @@
-.container {
+.mainNewsContainer {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  /* box-shadow: inset -1em -1em 10em rgba(0, 0, 0, 0.8); */
+  gap: 20px;
+}
+
+.allNewsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.allNewsTitle {
+  font-size: 30px;
+  text-transform: uppercase;
+  font-size: bold;
+  margin: 20px 0px;
+}
+
+.allNews {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  column-gap: 10px;
+  row-gap: 15px;
 }
