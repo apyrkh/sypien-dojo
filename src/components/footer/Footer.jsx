@@ -1,7 +1,6 @@
 import styles from './footer.module.css'
 import React from 'react'
 import logoSrc from 'public/logo.png'
-import '@/app/globals.css'
 import Image from 'next/image'
 import Link from 'next/link'
 import { getText } from '@/utils/textUtils'
