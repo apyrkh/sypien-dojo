@@ -11,10 +11,10 @@ const ThemeToggle = ({ color }) => {
     function switchTheme(e) {
       if (e.target.checked) {
         htmlTag.setAttribute('data-theme', 'dark')
-        localStorage.setItem('theme', 'dark') //add this
+        localStorage.setItem('theme', 'dark')
       } else {
         htmlTag.setAttribute('data-theme', 'light')
-        localStorage.setItem('theme', 'light') //add this
+        localStorage.setItem('theme', 'light') 
       }
     }
     toggleSwitch.addEventListener('change', switchTheme, false)

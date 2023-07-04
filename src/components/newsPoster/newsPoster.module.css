@@ -1,0 +1,46 @@
+.container {
+  display: flex;
+  height: 500px;
+  width: 300px;
+  position: relative;
+  cursor: pointer;
+  transition: 0.5s ease;
+  box-shadow: inset 0 -5em 10em rgb(0, 0, 0);
+  overflow: hidden;
+}
+
+.container:hover {
+  box-shadow: inset 0 -10em 10em rgb(0, 0, 0);
+}
+
+.container:hover .newsText {
+  transform: translateY(-150px);
+}
+
+.poster {
+  z-index: 0;
+  object-fit: cover;
+  position: relative;
+}
+
+.newsText {
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: absolute;
+  margin-left: 20px;
+  bottom: -50px;
+  transition: 0.3s ease;
+}
+
+.title {
+  font-size: 30px;
+  color: white;
+  font-size: bold;
+}
+
+.desc {
+  font-size: 15px;
+  font-weight: 200;
+}

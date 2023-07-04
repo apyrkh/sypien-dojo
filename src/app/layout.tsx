@@ -8,6 +8,7 @@ import Navbar from '@/components/navbar/Navbar'
 import Image from 'next/image'
 import TitleText from '@/components/titleText/TitleText'
 import Footer from '@/components/footer/Footer'
+// import { pageColor } from '@/utils/ColorByPath'
 
 const inter = Roboto({ subsets: ['latin-ext'], weight: ['400', '700'] })
 
@@ -40,12 +41,12 @@ export const metadata: Metadata = {
   ],
 }
 
-const pageColor = 'red'
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const pageColor = 'red'
   return (
     <html lang="en">
       <body className={inter.className}>
@@ -61,7 +62,7 @@ export default function RootLayout({
               />
               <div className={styles.textContainer}>
                 <div className={styles.titleContainer}>
-                  <TitleText title="news" desc="desc" color="yellow" />
+                  <TitleText title="news" desc="desc" color={pageColor} />
                 </div>
               </div>
             </div>
