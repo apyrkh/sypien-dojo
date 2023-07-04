@@ -8,7 +8,7 @@ import TitleText from '@/components/titleText/TitleText'
 import NewsPoster from '@/components/newsPoster/NewsPoster'
 import NewsBox from '@/components/newsBox/NewsBox'
 
-const pageColor = '#E3AB1B'
+const pageColor = '#DDB54D'
 
 const mainNews = [
   {
