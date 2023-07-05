@@ -3,16 +3,16 @@
   flex-direction: column;
   height: 400px;
   background-color: var(--bg-color);
-  color: (--font-color)
+  color: (--font-color);
 }
 
-.divider{
+.divider {
   height: 2px;
   width: 100%;
 }
 
-.container{
-  margin-top: 20px;
+.container {
+  margin-top: 50px;
   display: flex;
   justify-content: space-evenly;
 }
@@ -23,35 +23,35 @@
   object-fit: cover;
 }
 
-.nav{
+.nav {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  column-gap:20px;
-  height:150px;
+  column-gap: 20px;
+  height: 150px;
   row-gap: 5px;
 }
 
-.link{
+.link {
   text-transform: uppercase;
   font-weight: bold;
   transition: 0.5s ease;
 }
 
-.link:hover{
-  color: var(--heading-color)
+.link:hover {
+  color: var(--heading-color);
 }
 
-.instagram{
+.instagram {
   position: relative;
 }
 
-.photoContainer{
-  margin-top: 20px;
+.photoContainer {
+  margin-top: 10px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: 5px;
 }
 
-.img{
+.img {
   object-fit: cover;
 }
