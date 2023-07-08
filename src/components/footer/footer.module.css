@@ -8,6 +8,7 @@
 
 .divider {
   height: 2px;
+  background-color: var(--heading-color);
   width: 100%;
 }
 
@@ -34,15 +35,20 @@
 .link {
   text-transform: uppercase;
   font-weight: bold;
+  color: var(--font-color);
   transition: 0.5s ease;
 }
 
 .link:hover {
-  color: var(--heading-color);
+  color: var(--secondary-color);
 }
 
-.instagram {
+.facebook {
   position: relative;
+}
+
+.facebook > h2 {
+  color: var(--heading-color);
 }
 
 .photoContainer {

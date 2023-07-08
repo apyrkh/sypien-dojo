@@ -6,10 +6,10 @@ import Link from 'next/link'
 import { getText } from '@/utils/textUtils'
 import { facebookPhoto, links } from '@/constants/data'
 
-const Footer = ({ color }) => {
+const Footer = () => {
   return (
     <div className={styles.wrapper}>
-      <div className={styles.divider} style={{ backgroundColor: color }} />
+      <div className={styles.divider} />
       <div className={styles.container}>
         <div className={styles.contact}>
           <Link href="/" className={styles.logo_link}>
@@ -27,7 +27,7 @@ const Footer = ({ color }) => {
             </Link>
           ))}
         </div>
-        <div className={styles.instagram}>
+        <div className={styles.facebook}>
           <h2>Facebook</h2>
           <div className={styles.photoContainer}>
             {facebookPhoto.map((photo, index) => (

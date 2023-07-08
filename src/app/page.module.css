@@ -26,3 +26,56 @@
   flex-direction: column;
   align-items: center;
 }
+
+.newsContainer {
+}
+
+.newsHeading {
+  font-weight: 700;
+  font-size: 50px;
+  width: max-content;
+}
+
+.newsSmallText {
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.newsCards {
+  height: 600px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+.newsMainCard {
+  flex: 0.7;
+  width: 400px;
+  height: 550px;
+  display: flex;
+  flex-direction: row-reverse;
+  position: relative;
+}
+
+.MainCard {
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.newsSmallCards {
+  flex: 0.3;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.SmallCard {
+  width: 300px;
+  height: 300px;
+  position: relative;
+}
+
+.SmallCardImg {
+  object-fit: cover;
+  border-radius: 20px;
+}

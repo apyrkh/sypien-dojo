@@ -4,6 +4,7 @@ import Coach from '@/components/coach/Coach'
 import Slider from '@/components/slider/Slider'
 import Link from 'next/link'
 import EmbedMap from '@/components/EmbedMap/EmbedMap'
+import Image from 'next/image'
 
 const coaches = [
   {
@@ -18,11 +19,29 @@ const coaches = [
   },
 ]
 
-const pageColor = '#E31B1B'
-
 export default function Home() {
   return (
     <main className={styles.aMain}>
+      <section className="news">
+        <div className={styles.newsContainer}>
+          <h1 className={styles.newsHeading}>
+            Important news <span className={styles.newsSmallText}><Link href='/news'>see all news -></Link></span>
+          </h1>
+          <div className={styles.newsCards}>
+            <div className={styles.newsMainCard}>
+              <Image src='https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/349298515_990978428579842_2940259476220223937_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=bSDgRqwS_bYAX-dCkDY&_nc_ht=scontent-waw1-1.xx&oh=00_AfCwqkjSW8i3uvonKP3v8jB8-K7WdEGxsYRcNdUv6Febmg&oe=64ADEE6C' fill={true} alt='newsPhoto' className={styles.MainCard}></Image>
+            </div>
+            <div className={styles.newsSmallCards}>
+              <div className={styles.SmallCard}>
+                <Image src='https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/349298515_990978428579842_2940259476220223937_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=bSDgRqwS_bYAX-dCkDY&_nc_ht=scontent-waw1-1.xx&oh=00_AfCwqkjSW8i3uvonKP3v8jB8-K7WdEGxsYRcNdUv6Febmg&oe=64ADEE6C'fill={true} alt='newsPhoto' className={styles.SmallCardImg}></Image>
+              </div>
+              <div className={styles.SmallCard}>
+                <Image src='https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/349298515_990978428579842_2940259476220223937_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=bSDgRqwS_bYAX-dCkDY&_nc_ht=scontent-waw1-1.xx&oh=00_AfCwqkjSW8i3uvonKP3v8jB8-K7WdEGxsYRcNdUv6Febmg&oe=64ADEE6C'fill={true} alt='newsPhoto' className={styles.SmallCardImg}></Image>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="coach">
         <div className={styles.coachContainer}>
           <h1>Our coaches</h1>
@@ -32,7 +51,6 @@ export default function Home() {
               name={coach.name}
               description={coach.description}
               direction={index % 2}
-              color={pageColor}
             />
           ))}
         </div>
@@ -50,7 +68,7 @@ export default function Home() {
           <h1>Facebook</h1>
           <Slider />
           <Link href="https://www.facebook.com/karateIchibanSypienDojo">
-            <Button color={pageColor}>More photos</Button>
+            <Button>More photos</Button>
           </Link>
         </div>
       </section>

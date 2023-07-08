@@ -7,9 +7,9 @@ import Link from 'next/link'
 import React from 'react'
 import styles from './navbar.module.css'
 import ThemeToggle from '@/components/themeToggle/ThemeToggle'
-import {links} from '@/constants/data'
+import { links } from '@/constants/data'
 
-const Navbar = ({ color }) => {
+const Navbar = () => {
   return (
     <div className={styles.container}>
       <Link href="/" className={styles.logo_link}>
@@ -26,9 +26,9 @@ const Navbar = ({ color }) => {
             {link.title}
           </Link>
         ))}
-        <ThemeToggle color={color} />
+        <ThemeToggle />
       </div>
-      <ContactUsButton color={color} />
+      <ContactUsButton />
     </div>
   )
 }

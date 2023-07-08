@@ -10,5 +10,14 @@
   border-radius: 5px;
   cursor: pointer;
 
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--font-color);
+}
+
+@media screen and (max-width: 760px) {
+  .container {
+    height: 20px;
+    padding: 0 20px;
+    font-size: 12px;
+  }
 }
