@@ -24,7 +24,12 @@
   opacity: 0.7;
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 1000px) {
+  .container {
+    flex-direction: column !important;
+    margin: 20px 0;
+  }
+
   .background {
     height: 200px;
     width: 200px;

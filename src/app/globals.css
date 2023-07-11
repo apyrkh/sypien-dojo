@@ -26,6 +26,7 @@ html {
 /* how to change color of the panels with mode toggle if max-width is set? */
 
 body {
+  transition: all 0.3s ease-in-out;
   background-color: var(--bg-color);
   color: var(--font-color);
   display: flex;
@@ -91,13 +92,13 @@ section {
   margin-top: 20px;
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 1000px) {
   main {
     width: 100%;
   }
 
   h1 {
-    font-size: 60px;
+    font-size: 40px;
   }
 
   h2 {

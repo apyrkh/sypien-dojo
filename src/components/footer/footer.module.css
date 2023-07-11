@@ -56,8 +56,29 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 5px;
+  position: relative;
 }
 
 .img {
   object-fit: cover;
+}
+
+@media screen and (max-width: 1000px) {
+  .logo_img {
+    width: 100px;
+    height: 40px;
+  }
+
+  .nav {
+    column-gap: 10px;
+  }
+
+  .link {
+    font-size: 12px;
+  }
+
+  .container {
+    align-items: center;
+    flex-direction: column;
+  }
 }

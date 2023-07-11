@@ -8,7 +8,6 @@ import Navbar from '@/components/navbar/Navbar'
 import Image from 'next/image'
 import TitleText from '@/components/titleText/TitleText'
 import Footer from '@/components/footer/Footer'
-// import { pageColor } from '@/utils/ColorByPath'
 
 const inter = Montserrat({
   subsets: ['latin-ext'],

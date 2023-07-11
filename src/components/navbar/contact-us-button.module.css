@@ -8,6 +8,11 @@
   font-weight: bold;
   cursor: pointer;
 
-  background-color: black;
-  color: white;
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  transition: all 0.3s ease-out;
+}
+
+.container:hover {
+  background-color: var(--secondary-color);
 }

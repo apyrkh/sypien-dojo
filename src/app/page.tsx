@@ -24,21 +24,55 @@ export default function Home() {
     <main className={styles.aMain}>
       <section className="news">
         <div className={styles.newsContainer}>
-          <h1 className={styles.newsHeading}>
-            Important news <span className={styles.newsSmallText}><Link href='/news'>see all news -></Link></span>
+          <h1 className={styles.heading}>
+            Important news{' '}
+            <span className={styles.newsSmallText}>
+              <Link href="/news">see all news -&gt;</Link>
+            </span>
           </h1>
           <div className={styles.newsCards}>
             <div className={styles.newsMainCard}>
-              <Image src='https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/349298515_990978428579842_2940259476220223937_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=bSDgRqwS_bYAX-dCkDY&_nc_ht=scontent-waw1-1.xx&oh=00_AfCwqkjSW8i3uvonKP3v8jB8-K7WdEGxsYRcNdUv6Febmg&oe=64ADEE6C' fill={true} alt='newsPhoto' className={styles.MainCard}></Image>
+              <Image
+                src="https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/349298515_990978428579842_2940259476220223937_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=bSDgRqwS_bYAX-dCkDY&_nc_ht=scontent-waw1-1.xx&oh=00_AfCwqkjSW8i3uvonKP3v8jB8-K7WdEGxsYRcNdUv6Febmg&oe=64ADEE6C"
+                fill={true}
+                alt="newsPhoto"
+                className={styles.MainCard}
+              ></Image>
             </div>
             <div className={styles.newsSmallCards}>
               <div className={styles.SmallCard}>
-                <Image src='https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/349298515_990978428579842_2940259476220223937_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=bSDgRqwS_bYAX-dCkDY&_nc_ht=scontent-waw1-1.xx&oh=00_AfCwqkjSW8i3uvonKP3v8jB8-K7WdEGxsYRcNdUv6Febmg&oe=64ADEE6C'fill={true} alt='newsPhoto' className={styles.SmallCardImg}></Image>
+                <Image
+                  src="https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/349298515_990978428579842_2940259476220223937_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=bSDgRqwS_bYAX-dCkDY&_nc_ht=scontent-waw1-1.xx&oh=00_AfCwqkjSW8i3uvonKP3v8jB8-K7WdEGxsYRcNdUv6Febmg&oe=64ADEE6C"
+                  fill={true}
+                  alt="newsPhoto"
+                  className={styles.SmallCardImg}
+                ></Image>
               </div>
               <div className={styles.SmallCard}>
-                <Image src='https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/349298515_990978428579842_2940259476220223937_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=bSDgRqwS_bYAX-dCkDY&_nc_ht=scontent-waw1-1.xx&oh=00_AfCwqkjSW8i3uvonKP3v8jB8-K7WdEGxsYRcNdUv6Febmg&oe=64ADEE6C'fill={true} alt='newsPhoto' className={styles.SmallCardImg}></Image>
+                <Image
+                  src="https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/349298515_990978428579842_2940259476220223937_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=bSDgRqwS_bYAX-dCkDY&_nc_ht=scontent-waw1-1.xx&oh=00_AfCwqkjSW8i3uvonKP3v8jB8-K7WdEGxsYRcNdUv6Febmg&oe=64ADEE6C"
+                  fill={true}
+                  alt="newsPhoto"
+                  className={styles.SmallCardImg}
+                ></Image>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+      <section className="events">
+        <div className={styles.eventContainer}>
+          <h1 className={styles.heading}>Upcoming events</h1>
+          <div className={styles.eventCards}>
+            <div className={styles.mainEventCard}>
+              <Image
+                src="https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/349298515_990978428579842_2940259476220223937_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=bSDgRqwS_bYAX-dCkDY&_nc_ht=scontent-waw1-1.xx&oh=00_AfCwqkjSW8i3uvonKP3v8jB8-K7WdEGxsYRcNdUv6Febmg&oe=64ADEE6C"
+                alt="MainEvent"
+                fill={true}
+                className={styles.mainEventImg}
+              />
+            </div>
+            <div className={styles.eventsCalendar}></div>
           </div>
         </div>
       </section>
