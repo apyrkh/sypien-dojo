@@ -3,7 +3,7 @@ import styles from './newsPoster.module.css'
 import Image from 'next/image'
 import ColorBar from '../colorBar/ColorBar'
 
-const NewsPoster = ({ color, image, title, desc }) => {
+const NewsPoster = ({ image, title, desc }) => {
   return (
     <div
       className={styles.container}
@@ -22,7 +22,7 @@ const NewsPoster = ({ color, image, title, desc }) => {
       {/* whats the best? background image or Image from next? */}
       <div className={styles.newsText}>
         <h3 className={styles.title}>{title}</h3>
-        <ColorBar color={color} />
+        <ColorBar />
         <p className={styles.desc}>{desc}</p>
       </div>
     </div>

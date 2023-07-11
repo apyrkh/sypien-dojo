@@ -2,7 +2,7 @@
 import './themeToggle.css'
 import React, { useEffect } from 'react'
 
-const ThemeToggle = ({ color }) => {
+const ThemeToggle = () => {
   useEffect(() => {
     const htmlTag = document.documentElement
     const toggleSwitch = document.querySelector(
@@ -14,7 +14,7 @@ const ThemeToggle = ({ color }) => {
         localStorage.setItem('theme', 'dark')
       } else {
         htmlTag.setAttribute('data-theme', 'light')
-        localStorage.setItem('theme', 'light') 
+        localStorage.setItem('theme', 'light')
       }
     }
     toggleSwitch.addEventListener('change', switchTheme, false)
@@ -36,7 +36,7 @@ const ThemeToggle = ({ color }) => {
     <div className="theme-switch-wrapper">
       <label className="theme-switch" htmlFor="checkbox">
         <input type="checkbox" id="checkbox" />
-        <div className="slider round" style={{ backgroundColor: color }}></div>
+        <div className="slider round"></div>
       </label>
     </div>
   )

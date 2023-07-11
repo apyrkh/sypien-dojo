@@ -2,10 +2,8 @@ import styles from './colorbar.module.css'
 
 import React from 'react'
 
-const ColorBar = ({ color }) => {
-  return (
-    <div className={styles.container} style={{ backgroundColor: color }}></div>
-  )
+const ColorBar = () => {
+  return <div className={styles.container} />
 }
 
 export default ColorBar

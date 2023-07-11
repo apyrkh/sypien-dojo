@@ -1,10 +1,5 @@
 import { React } from 'react'
 import styles from './page.module.css'
-import Navbar from '@/components/navbar/Navbar'
-import Image from 'next/image'
-import ColorBar from '@/components/colorBar/ColorBar'
-import Button from '@/components/button/Button'
-import TitleText from '@/components/titleText/TitleText'
 import NewsPoster from '@/components/newsPoster/NewsPoster'
 import NewsBox from '@/components/newsBox/NewsBox'
 

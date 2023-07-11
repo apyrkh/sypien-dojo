@@ -26,3 +26,139 @@
   flex-direction: column;
   align-items: center;
 }
+
+.newsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading {
+  font-weight: 700;
+  font-size: 50px;
+  width: max-content;
+}
+
+.newsSmallText {
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.newsCards {
+  margin-top: 20px;
+  height: 600px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+.newsMainCard {
+  width: 700px;
+  height: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  position: relative;
+}
+
+.MainCard {
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.newsSmallCards {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.SmallCard {
+  width: 250px;
+  height: 300px;
+  position: relative;
+}
+
+.SmallCardImg {
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.eventContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.eventCards {
+  display: flex;
+  height: 500px;
+  gap: 10px;
+}
+
+.mainEventCard {
+  display: flex;
+  width: 700px;
+  height: 100%;
+  position: relative;
+}
+
+.mainEventImg {
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.eventsCalendar {
+  width: 300px;
+  background-color: rgb(186, 186, 186);
+  height: 100%;
+  border-radius: 20px;
+}
+
+@media screen and (max-width: 1000px) {
+  /* news start*/
+
+  .newsCards {
+    gap: 5px;
+    height: 200px;
+  }
+
+  .heading {
+    font-size: 20px;
+  }
+
+  .newsSmallText {
+    font-size: 10px;
+  }
+
+  .newsMainCard {
+    width: 250px;
+  }
+
+  .newsSmallCards {
+    gap: 5px;
+  }
+
+  .SmallCard {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* news end */
+
+  .eventContainer {
+    align-items: center;
+  }
+
+  .eventCards {
+    height: 200px;
+  }
+
+  .mainEventCard {
+    width: 200px;
+  }
+
+  .eventsCalendar {
+    width: 150px;
+  }
+}

@@ -2,7 +2,7 @@ import React from 'react'
 import ColorBar from '../colorBar/ColorBar'
 import styles from './coach.module.css'
 
-const Coach = ({ name, description, direction, color }) => {
+const Coach = ({ name, description, direction }) => {
   return (
     <div
       className={styles.container}
@@ -11,7 +11,7 @@ const Coach = ({ name, description, direction, color }) => {
       <div className={styles.background}>{/* photo */}</div>
       <div className={styles.textContainer}>
         <h3 className={styles.name}>{name}</h3>
-        <ColorBar color={color} />
+        <ColorBar />
         <p className={styles.desc}>{description}</p>
       </div>
     </div>

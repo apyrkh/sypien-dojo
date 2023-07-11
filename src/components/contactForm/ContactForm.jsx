@@ -18,7 +18,7 @@ const placeholders = [
   },
 ]
 
-const contactForm = () => {
+const ContactForm = () => {
   return (
     <div className={styles.container}>
       <h3 className={styles.title}>Start your karate path!</h3>
@@ -51,4 +51,4 @@ const contactForm = () => {
   )
 }
 
-export default contactForm
+export default ContactForm
