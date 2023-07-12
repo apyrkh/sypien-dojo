@@ -115,12 +115,13 @@
   border-radius: 20px;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 767px) {
   /* news start*/
 
   .newsCards {
     gap: 5px;
     height: 200px;
+    position: relative;
   }
 
   .heading {
@@ -132,11 +133,7 @@
   }
 
   .newsMainCard {
-    width: 250px;
-  }
-
-  .newsSmallCards {
-    gap: 5px;
+    display: none;
   }
 
   .SmallCard {
@@ -151,14 +148,105 @@
   }
 
   .eventCards {
-    height: 200px;
+    height: 300px;
   }
 
   .mainEventCard {
-    width: 200px;
+    display: none;
   }
 
   .eventsCalendar {
-    width: 150px;
+    width: 300px;
+  }
+}
+
+/* tablets */
+
+@media screen and (max-width: 1023px) {
+  .newsCards {
+    gap: 5px;
+    height: 200px;
+  }
+
+  .heading {
+    font-size: 20px;
+  }
+
+  .newsSmallText {
+    font-size: 10px;
+  }
+
+  .newsSmallCards {
+    display: none;
+  }
+
+  .SmallCard {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* news end */
+
+  .eventContainer {
+    align-items: center;
+  }
+
+  .eventCards {
+    height: 300px;
+  }
+
+  .mainEventCard {
+    width: 400px;
+  }
+
+  .eventsCalendar {
+    width: 200px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .newsCards {
+    gap: 5px;
+    height: 400px;
+    align-items: stretch;
+  }
+
+  .heading {
+    font-size: 20px;
+  }
+
+  .newsMainCard {
+    width: 600px;
+    height: 100%;
+  }
+
+  .newsSmallText {
+    font-size: 10px;
+  }
+
+  .newsSmallCards {
+  }
+
+  .SmallCard {
+    width: 200px;
+    height: 200px;
+  }
+
+  /* news end */
+
+  .eventContainer {
+    align-items: center;
+  }
+
+  .eventCards {
+    height: 400px;
+  }
+
+  .mainEventCard {
+    width: 500px;
+  }
+
+  .eventsCalendar {
+    width: 300px;
   }
 }
