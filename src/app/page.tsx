@@ -24,7 +24,7 @@ export default function Home() {
     <main className={styles.aMain}>
       <section className="news">
         <div className={styles.newsContainer}>
-          <h1 className={styles.heading}>
+          <h1 className={`u-text-italic ${styles.heading}`}>
             Important news{' '}
             <span className={styles.newsSmallText}>
               <Link href="/news">see all news -&gt;</Link>
@@ -62,7 +62,7 @@ export default function Home() {
       </section>
       <section className="events">
         <div className={styles.eventContainer}>
-          <h1 className={styles.heading}>Upcoming events</h1>
+          <h1 className={`u-text-italic ${styles.heading}`}>Upcoming events</h1>
           <div className={styles.eventCards}>
             <div className={styles.mainEventCard}>
               <Image

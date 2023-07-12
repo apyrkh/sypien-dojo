@@ -1,17 +1,19 @@
 :root {
   --primary-color: #ffffff;
   --secondary-color: #ffb743;
-  --font-color: #000000;
+  --font-color: #222222;
   --bg-color: #f8f7fa;
   --heading-color: #000000;
+  --accent-color: #000;
 }
 
 [data-theme='dark'] {
   --primary-color: #000000;
   --secondary-color: #ffb743;
-  --font-color: #ffffff;
+  --font-color: #dadada;
   --bg-color: #000000;
   --heading-color: #ffffff;
+  --accent-color: #fff;
 }
 
 * {
@@ -63,30 +65,61 @@ sup {
   top: -0.5em;
 }
 
+/* typography start*/
+
 h1 {
   color: var(--heading-color);
-  text-transform: uppercase;
-  font-style: italic;
   font-weight: bold;
-  font-size: 100px;
+  text-transform: uppercase;
+  font-size: 36px;
 }
 
-/* h2 color will be fixes as mainPhoto will be choosed */
+.u-text-italic {
+  font-style: italic;
+}
 
 h2 {
   color: var(--primary-color);
-  text-transform: uppercase;
   font-weight: bold;
-  font-size: 30px;
+  text-transform: uppercase;
+  font-size: 24px;
 }
 
-/* h3{
+h3 {
+  color: var(--heading-color);
+  font-weight: normal;
+  font-size: 18px;
+}
 
-} */
+p {
+  font-size: 16px;
+  color: var(--font-color);
+}
 
-/* h4{
-  
-} */
+a {
+  font-size: 16px;
+  color: var(--heading-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+.btn {
+  font-weight: bold;
+  font-size: 14px;
+  color: var(--primary-color);
+  background-color: var(--accent-color);
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--secondary-color);
+}
 
 section {
   margin-top: 20px;
