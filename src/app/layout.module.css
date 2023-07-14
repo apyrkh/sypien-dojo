@@ -7,9 +7,8 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  margin-left: 50px;
   position: relative;
-  width: 300px;
-  margin: 50px 0 0 100px;
   z-index: 2;
 }
 /* ......... */
@@ -21,7 +20,8 @@
 
 .imgContainer {
   display: flex;
-  justify-content: center;
+  height: 50%;
+  align-items: center;
 }
 
 .mainPhoto {
@@ -33,20 +33,12 @@
 .titleContainer {
   display: flex;
   flex-direction: column;
-  line-height: 50px;
   margin-bottom: 20px;
 }
 
 .desc {
   margin-bottom: 50px;
   color: rgb(255, 255, 255);
-}
-
-.title {
-  color: #ff0909;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 100px;
 }
 
 .footer {

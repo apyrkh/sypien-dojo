@@ -63,7 +63,7 @@ export default function RootLayout({
               />
               <div className={styles.textContainer}>
                 <div className={styles.titleContainer}>
-                  <TitleText title="news" desc="desc" />
+                  <TitleText title="TRAIN WITH THE BEST" />
                 </div>
               </div>
             </div>
