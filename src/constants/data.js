@@ -99,3 +99,14 @@ export const historyCards = [
     img: 'https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/349474915_2270524233147557_84063610244572263_n.jpg?stp=cp6_dst-jpg&_nc_cat=100&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=xv3E8aoWL2EAX-noHqx&_nc_ht=scontent-waw1-1.xx&oh=00_AfAoP8wKuN1p0G1CoHEOWhsxwkaAb9GL7d0OL_mqvGjfUg&oe=64A9B9BF',
   },
 ]
+
+export const eventDots = [
+  {
+    year: 2021,
+    events: ['EC', 'PO', 'IC'],
+  },
+  {
+    year: 2022,
+    events: ['EChamp', 'POpen', 'ICup'],
+  },
+]
