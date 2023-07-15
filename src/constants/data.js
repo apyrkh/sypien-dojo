@@ -84,3 +84,29 @@ export const facebookPhoto = [
     src: 'https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/350773719_6924989620862388_3162336663657966256_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=730e14&_nc_ohc=U8M7kVPxSjkAX82y1Nm&_nc_ht=scontent-waw1-1.xx&oh=00_AfD3JCY3c6AE9QEJbEqGYgB6waV0JxWKcv5eMX0TxulB5Q&oe=64A9FC4E',
   },
 ]
+
+export const allNews = getText('news.allNews')
+
+export const historyCards = [
+  {
+    title: getText('history.clubTitle'),
+    text: getText('history.clubHistory'),
+    img: 'https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/349474915_2270524233147557_84063610244572263_n.jpg?stp=cp6_dst-jpg&_nc_cat=100&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=xv3E8aoWL2EAX-noHqx&_nc_ht=scontent-waw1-1.xx&oh=00_AfAoP8wKuN1p0G1CoHEOWhsxwkaAb9GL7d0OL_mqvGjfUg&oe=64A9B9BF',
+  },
+  {
+    title: getText('history.membersTitle'),
+    text: getText('history.membersDesc'),
+    img: 'https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/349474915_2270524233147557_84063610244572263_n.jpg?stp=cp6_dst-jpg&_nc_cat=100&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=xv3E8aoWL2EAX-noHqx&_nc_ht=scontent-waw1-1.xx&oh=00_AfAoP8wKuN1p0G1CoHEOWhsxwkaAb9GL7d0OL_mqvGjfUg&oe=64A9B9BF',
+  },
+]
+
+export const eventDots = [
+  {
+    year: 2021,
+    events: ['EC', 'PO', 'IC'],
+  },
+  {
+    year: 2022,
+    events: ['EChamp', 'POpen', 'ICup'],
+  },
+]

@@ -1,13 +1,10 @@
 import React from 'react'
 import styles from './titleText.module.css'
-import ColorBar from '@/components/colorBar/ColorBar'
 
-const TitleText = ({ title, desc }) => {
+const TitleText = ({ title }) => {
   return (
     <div className={styles.container}>
-      <h3 className={styles.title}>{title}</h3>
-      <ColorBar />
-      <p className={styles.desc}>{desc}</p>
+      <h1 className={styles.title}>{title}</h1>
     </div>
   )
 }

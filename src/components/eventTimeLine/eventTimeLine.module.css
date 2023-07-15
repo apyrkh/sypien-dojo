@@ -1,0 +1,38 @@
+.verticalLine {
+  display: flex;
+  height: 100vh;
+  width: 3px;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 2px;
+  background-color: var(--accent-color);
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 10px;
+  background-color: var(--accent-color);
+  cursor: pointer;
+  transition: 0.2s ease-in;
+  position: relative;
+}
+
+.dot.active {
+  width: 20px;
+  height: 20px;
+}
+
+.dot.active .label {
+  font-size: 18px;
+}
+
+.label {
+  position: absolute;
+  top: 0;
+  left: 25px;
+  font-size: 14px;
+  transition: 0.2s ease-in;
+  color: black;
+}

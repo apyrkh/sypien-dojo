@@ -1,61 +1,48 @@
 import { React } from 'react'
 import styles from './page.module.css'
-import NewsPoster from '@/components/newsPoster/NewsPoster'
 import NewsBox from '@/components/newsBox/NewsBox'
+import Image from 'next/image'
+import { allNews } from '@/constants/data'
 
-const pageColor = '#DDB54D'
-
-const mainNews = [
+const newsBoxes = [
   {
-    image:
-      'https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/341038030_171995525756637_2302024163547647754_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=FdIMy8Ia33cAX9J97ke&_nc_ht=scontent-waw1-1.xx&oh=00_AfAgBJmpvOZKiAnUKRyydFOs6oLCOu2kHOUfBpZ-28cbuQ&oe=64A6AF30',
+    imgUrl:
+      'https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/349298515_990978428579842_2940259476220223937_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=bSDgRqwS_bYAX-dCkDY&_nc_ht=scontent-waw1-1.xx&oh=00_AfCwqkjSW8i3uvonKP3v8jB8-K7WdEGxsYRcNdUv6Febmg&oe=64ADEE6C',
     title: 'Polish Open',
     desc: 'PO Tournament',
     id: 0,
   },
   {
-    image:
-      'https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/341038030_171995525756637_2302024163547647754_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=FdIMy8Ia33cAX9J97ke&_nc_ht=scontent-waw1-1.xx&oh=00_AfAgBJmpvOZKiAnUKRyydFOs6oLCOu2kHOUfBpZ-28cbuQ&oe=64A6AF30',
+    imgUrl:
+      'https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/349298515_990978428579842_2940259476220223937_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=bSDgRqwS_bYAX-dCkDY&_nc_ht=scontent-waw1-1.xx&oh=00_AfCwqkjSW8i3uvonKP3v8jB8-K7WdEGxsYRcNdUv6Febmg&oe=64ADEE6C',
     title: 'European Open',
     desc: 'European Tournament',
     id: 1,
   },
   {
-    image:
-      'https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/341038030_171995525756637_2302024163547647754_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=FdIMy8Ia33cAX9J97ke&_nc_ht=scontent-waw1-1.xx&oh=00_AfAgBJmpvOZKiAnUKRyydFOs6oLCOu2kHOUfBpZ-28cbuQ&oe=64A6AF30',
-    title: 'Ichiban Cup',
-    desc: 'Polsih Tournament',
-    id: 2,
-  },
-]
-
-const allNews = [
-  {
-    title: 'Polish Open',
-    desc: 'PO Tournament',
-    id: 0,
-  },
-  {
-    title: 'European Open',
-    desc: 'European Tournament',
-    id: 1,
-  },
-  {
+    imgUrl:
+      'https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/349298515_990978428579842_2940259476220223937_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=bSDgRqwS_bYAX-dCkDY&_nc_ht=scontent-waw1-1.xx&oh=00_AfCwqkjSW8i3uvonKP3v8jB8-K7WdEGxsYRcNdUv6Febmg&oe=64ADEE6C',
     title: 'Ichiban Cup',
     desc: 'Polsih Tournament',
     id: 2,
   },
   {
+    imgUrl:
+      'https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/349298515_990978428579842_2940259476220223937_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=bSDgRqwS_bYAX-dCkDY&_nc_ht=scontent-waw1-1.xx&oh=00_AfCwqkjSW8i3uvonKP3v8jB8-K7WdEGxsYRcNdUv6Febmg&oe=64ADEE6C',
     title: 'Polish Open',
     desc: 'PO Tournament',
     id: 3,
   },
   {
+    imgUrl:
+      'https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/349298515_990978428579842_2940259476220223937_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=bSDgRqwS_bYAX-dCkDY&_nc_ht=scontent-waw1-1.xx&oh=00_AfCwqkjSW8i3uvonKP3v8jB8-K7WdEGxsYRcNdUv6Febmg&oe=64ADEE6C',
     title: 'European Open',
     desc: 'European Tournament',
     id: 4,
   },
   {
+    imgUrl:
+      'https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/349298515_990978428579842_2940259476220223937_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=bSDgRqwS_bYAX-dCkDY&_nc_ht=scontent-waw1-1.xx&oh=00_AfCwqkjSW8i3uvonKP3v8jB8-K7WdEGxsYRcNdUv6Febmg&oe=64ADEE6C',
     title: 'Ichiban Cup',
     desc: 'Polsih Tournament',
     id: 5,
@@ -65,27 +52,21 @@ const allNews = [
 const News = () => {
   return (
     <main>
-      <div
-        className={styles.mainNewsContainer}
-        style={{ backgroundColor: pageColor }}
-      >
-        {mainNews.map((item) => (
-          <NewsPoster
-            key={item.id}
-            color={pageColor}
-            image={item.image}
-            title={item.title}
-            desc={item.desc}
-          />
-        ))}
+      <div className={styles.mainNewsContainer}>
+        <Image
+          src="https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/349298515_990978428579842_2940259476220223937_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=bSDgRqwS_bYAX-dCkDY&_nc_ht=scontent-waw1-1.xx&oh=00_AfCwqkjSW8i3uvonKP3v8jB8-K7WdEGxsYRcNdUv6Febmg&oe=64ADEE6C"
+          alt="mainPoster"
+          fill={true}
+          className={styles.mainNewsPhoto}
+        />
       </div>
       <div className={styles.allNewsContainer}>
-        <h3 className={styles.allNewsTitle}>All news</h3>
+        <h3 className={styles.allNewsTitle}>{allNews}</h3>
         <div className={styles.allNews}>
-          {allNews.map((item) => (
+          {newsBoxes.map((item) => (
             <NewsBox
+              img={item.imgUrl}
               key={item.id}
-              color={pageColor}
               title={item.title}
               desc={item.desc}
             />

@@ -4,15 +4,13 @@
 
 [class^='number-slide'],
 [class*=' number-slide'] {
-  min-height: 300px;
-  min-width: 400px;
-  max-height: 100vh;
   object-fit: cover;
 }
 
 .keen-slider__slide {
   width: 300px;
   height: 300px;
+  position: relative;
 }
 
 @media screen and (max-width: 1024px) {
@@ -26,7 +24,10 @@
 @media screen and (max-width: 740px) {
   [class^='number-slide'],
   [class*=' number-slide'] {
-    min-height: 200px;
-    min-width: 300px;
+    height: 200px;
+  }
+
+  .keen-slider__slide {
+    height: 200px;
   }
 }

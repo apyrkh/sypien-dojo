@@ -12,24 +12,26 @@ const Slider = () => {
     loop: true,
     mode: 'snap',
     rtl: false,
-    slides: { perView: 'auto' },
+    slides: { perView: '2' },
   })
 
   return (
     <div ref={sliderRef} className="keen-slider">
       {sliderData.map((photo, index) => (
-        <Link
+        <div
           className="keen-slider__slide"
-          href="https://www.facebook.com/karateIchibanSypienDojo"
+          style={{ maxWidth: 200, minWidth: 200 }}
           key={index}
         >
-          <Image
-            src={photo.src}
-            alt={photo.alt}
-            fill={true}
-            className="number-slide"
-          />
-        </Link>
+          <Link href="https://www.facebook.com/karateIchibanSypienDojo">
+            <Image
+              src={photo.src}
+              alt={photo.alt}
+              fill={true}
+              className={`number-slide${index}`}
+            />
+          </Link>
+        </div>
       ))}
     </div>
   )

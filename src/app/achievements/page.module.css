@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  position: relative;
+}
+
+.eventLine {
+  flex: 1;
+}
+
+.eventsContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--font-color);
+  flex-direction: column;
+}
+
+.events {
+  list-style-type: disc;
+}
