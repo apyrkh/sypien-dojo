@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './historyCard.module.css'
 import Image from 'next/image'
 
-const HistoryCard = ({ img, heading, desc, direction, color }) => {
+const HistoryCard = ({ img, heading, desc, direction }) => {
   return (
     <div
       className={styles.container}
@@ -17,9 +17,7 @@ const HistoryCard = ({ img, heading, desc, direction, color }) => {
         />
       </div>
       <div className={styles.desc}>
-        <h3 className={styles.heading} style={{ color: color }}>
-          {heading}
-        </h3>
+        <h2 className={styles.heading}>{heading}</h2>
         <p>{desc}</p>
       </div>
     </div>
