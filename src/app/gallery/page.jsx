@@ -7,7 +7,13 @@ import Image from 'next/image'
 const Gallery = () => {
   const [activePanel, setActivePanel] = useState(0)
   const handleClick = (index) => {
-    setActivePanel(index)
+    setActivePanel((prev) => {
+      if (prev === index) {
+        setActivePanel(null)
+      } else {
+        setActivePanel(index)
+      }
+    })
   }
 
   return (
