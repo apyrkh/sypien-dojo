@@ -1,4 +1,5 @@
 import { getText } from '@/utils/textUtils'
+import { get } from 'http'
 
 export const sliderData = [
   {
@@ -118,43 +119,66 @@ export const eventDots = [
 
 export const galleryPhotos = [
   {
-    url: '',
-    alt: 'photo',
+    title: getText('gallery.competitions'),
+    photos: [
+      {
+        url: '',
+        alt: 'photo',
+      },
+      {
+        url: '',
+        alt: 'photo',
+      },
+      {
+        url: '',
+        alt: 'photo',
+      },
+      {
+        url: '',
+        alt: 'photo',
+      },
+    ],
   },
   {
-    url: '',
-    alt: 'photo',
+    title: getText('gallery.camps'),
+    photos: [
+      {
+        url: '',
+        alt: 'photo',
+      },
+      {
+        url: '',
+        alt: 'photo',
+      },
+      {
+        url: '',
+        alt: 'photo',
+      },
+      {
+        url: '',
+        alt: 'photo',
+      },
+    ],
   },
   {
-    url: '',
-    alt: 'photo',
-  },
-  {
-    url: '',
-    alt: 'photo',
-  },
-  {
-    url: '',
-    alt: 'photo',
-  },
-  {
-    url: '',
-    alt: 'photo',
-  },
-  {
-    url: '',
-    alt: 'photo',
-  },
-  {
-    url: '',
-    alt: 'photo',
-  },
-  {
-    url: '',
-    alt: 'photo',
-  },
-  {
-    url: '',
-    alt: 'photo',
+    title: getText('gallery.events'),
+    photos: [
+      {
+        url: '',
+        alt: 'photo',
+      },
+      {
+        url: '',
+        alt: 'photo',
+      },
+      {
+        url: '',
+        alt: 'photo',
+      },
+      {
+        url: '',
+        alt: 'photo',
+      },
+    ],
   },
 ]
