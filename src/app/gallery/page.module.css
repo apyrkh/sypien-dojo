@@ -1,0 +1,12 @@
+.container {
+  margin: 25px 0;
+  display: grid;
+  grid-template-columns: 200px repeat(4, 200px);
+  gap: 15px;
+}
+
+.photo {
+  width: 200px;
+  height: 200px;
+  background-color: gray;
+}

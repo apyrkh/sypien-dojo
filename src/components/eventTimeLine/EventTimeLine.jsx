@@ -13,7 +13,9 @@ const EventTimeLine = ({ activeDot, onDotClick }) => {
           }`}
           onClick={() => onDotClick(index)}
         >
-          <div className={styles.label}>{dot.year}</div>
+          <div className={styles.label}>
+            <p>{dot.year}</p>
+          </div>
         </div>
       ))}
     </div>

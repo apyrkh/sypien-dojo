@@ -107,6 +107,54 @@ export const eventDots = [
   },
   {
     year: 2022,
-    events: ['EChamp', 'POpen', 'ICup'],
+    events: [
+      'EChamp',
+      'POpen',
+      'ICup',
+      'mmmmmmmfmdfdfmdfdmfmdmfdmfmdfmdmfdmfmdmfdmfmdfmdfmdfmdkmfkdmfkdmfkmdfmdkmmkd',
+    ],
+  },
+]
+
+export const galleryPhotos = [
+  {
+    url: '',
+    alt: 'photo',
+  },
+  {
+    url: '',
+    alt: 'photo',
+  },
+  {
+    url: '',
+    alt: 'photo',
+  },
+  {
+    url: '',
+    alt: 'photo',
+  },
+  {
+    url: '',
+    alt: 'photo',
+  },
+  {
+    url: '',
+    alt: 'photo',
+  },
+  {
+    url: '',
+    alt: 'photo',
+  },
+  {
+    url: '',
+    alt: 'photo',
+  },
+  {
+    url: '',
+    alt: 'photo',
+  },
+  {
+    url: '',
+    alt: 'photo',
   },
 ]
