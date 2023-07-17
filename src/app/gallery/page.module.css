@@ -45,3 +45,30 @@
 .hidden {
   display: none;
 }
+@media screen and (max-width: 1024px) {
+  .photoContainer {
+    display: grid;
+    margin: 20px 0;
+    grid-template-columns: 150px repeat(2, 150px);
+    gap: 15px;
+  }
+
+  .photo {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .photoContainer {
+    display: grid;
+    margin: 20px 0;
+    grid-template-columns: 100px repeat(2, 100px);
+    gap: 15px;
+  }
+
+  .photo {
+    width: 100px;
+    height: 100px;
+  }
+}
