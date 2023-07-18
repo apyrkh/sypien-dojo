@@ -61,10 +61,7 @@
 
 @media screen and (max-width: 768px) {
   .photoContainer {
-    display: grid;
-    margin: 20px 0;
     grid-template-columns: 100px repeat(2, 100px);
-    gap: 15px;
   }
 
   .photo {

@@ -1,5 +1,4 @@
 import { getText } from '@/utils/textUtils'
-import { get } from 'http'
 
 export const sliderData = [
   {
