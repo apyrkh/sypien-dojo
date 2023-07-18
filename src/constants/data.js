@@ -107,6 +107,77 @@ export const eventDots = [
   },
   {
     year: 2022,
-    events: ['EChamp', 'POpen', 'ICup'],
+    events: [
+      'EChamp',
+      'POpen',
+      'ICup',
+      'mmmmmmmfmdfdfmdfdmfmdmfdmfmdfmdmfdmfmdmfdmfmdfmdfmdfmdkmfkdmfkdmfkmdfmdkmmkd',
+    ],
+  },
+]
+
+export const galleryPhotos = [
+  {
+    title: getText('gallery.competitions'),
+    photos: [
+      {
+        url: '',
+        alt: 'photo',
+      },
+      {
+        url: '',
+        alt: 'photo',
+      },
+      {
+        url: '',
+        alt: 'photo',
+      },
+      {
+        url: '',
+        alt: 'photo',
+      },
+    ],
+  },
+  {
+    title: getText('gallery.camps'),
+    photos: [
+      {
+        url: '',
+        alt: 'photo',
+      },
+      {
+        url: '',
+        alt: 'photo',
+      },
+      {
+        url: '',
+        alt: 'photo',
+      },
+      {
+        url: '',
+        alt: 'photo',
+      },
+    ],
+  },
+  {
+    title: getText('gallery.events'),
+    photos: [
+      {
+        url: '',
+        alt: 'photo',
+      },
+      {
+        url: '',
+        alt: 'photo',
+      },
+      {
+        url: '',
+        alt: 'photo',
+      },
+      {
+        url: '',
+        alt: 'photo',
+      },
+    ],
   },
 ]
