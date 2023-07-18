@@ -181,3 +181,18 @@ export const galleryPhotos = [
     ],
   },
 ]
+
+export const camps = [
+  {
+    img: 'https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/357781399_732455828885208_431216143525298045_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=Io9ONJsvEDoAX-Wr8rd&_nc_ht=scontent-waw1-1.xx&oh=00_AfDIueJbdCx1U_IwxGtY7sL779qDTjmt66hg8LTdCqgtfw&oe=64BCAE93',
+    heading: 'Rogowo',
+    description:
+      'TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest',
+  },
+  {
+    img: 'https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/357781399_732455828885208_431216143525298045_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=Io9ONJsvEDoAX-Wr8rd&_nc_ht=scontent-waw1-1.xx&oh=00_AfDIueJbdCx1U_IwxGtY7sL779qDTjmt66hg8LTdCqgtfw&oe=64BCAE93',
+    heading: 'Ichiban',
+    description:
+      'TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest',
+  },
+]

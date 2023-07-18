@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading {
+  margin-top: 20px;
+}
+
+.camps {
+  display: flex;
+  flex-direction: column-reverse;
+}
