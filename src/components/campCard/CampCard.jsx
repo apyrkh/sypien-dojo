@@ -3,6 +3,7 @@ import Image from 'next/image'
 import React, { useState } from 'react'
 import { Collapse } from 'react-collapse'
 import './campCard.css'
+import FileDownload from '@/components/fileDownload/FileDownload'
 
 const CampCard = ({ item }) => {
   const [isOpened, setIsOpened] = useState(false)
@@ -16,7 +17,14 @@ const CampCard = ({ item }) => {
       </div>
       <h2 className="heading">{item.heading}</h2>
       <Collapse isOpened={isOpened}>
-        <div className="collapsed-content">{item.description}</div>
+        <div className="collapsed-content">
+          <p className="description">{item.description}</p>
+          <div className="files">
+            {item.files.map((file, index) => (
+              <FileDownload key={index} item={file} />
+            ))}
+          </div>
+        </div>
       </Collapse>
     </div>
   )

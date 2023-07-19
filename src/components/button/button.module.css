@@ -1,19 +1,17 @@
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: max-content;
-  text-transform: uppercase;
   font-weight: bold;
-  height: 40px;
-  padding: 0 30px;
+  font-size: 14px;
+  color: var(--primary-color);
+  background-color: var(--accent-color);
+  padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-
-  background-color: var(--primary-color);
-  color: var(--font-color);
+  transition: 0.3s ease;
 }
 
+.container:hover {
+  background-color: var(--secondary-color);
+}
 @media screen and (max-width: 760px) {
   .container {
     height: 20px;

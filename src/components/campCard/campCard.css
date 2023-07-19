@@ -19,6 +19,7 @@
 }
 
 .img {
+  border-radius: 5px 5px 0px 0px;
   object-fit: cover;
 }
 
@@ -30,7 +31,17 @@
 }
 
 .collapsed-content {
-  display: flex;
-  color: var(--bg-color);
+  border-radius: 0px 0px 5px 5px;
+  padding: 10px;
+  word-break: break-all;
+  line-height: var(--line-height-small);
   background-color: var(--accent-color);
+}
+
+.collapsed-content > .description {
+  color: var(--bg-color);
+}
+
+.files {
+  margin-top: 20px;
 }
