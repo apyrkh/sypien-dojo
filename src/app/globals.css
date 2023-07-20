@@ -5,6 +5,9 @@
   --bg-color: #f8f7fa;
   --heading-color: #000000;
   --accent-color: #000;
+  --line-height-small: 25px;
+  --line-height-bigger: 50px;
+  --line-height-big: 70px;
 }
 
 [data-theme='dark'] {
