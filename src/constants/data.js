@@ -1,5 +1,14 @@
 import { getText } from '@/utils/textUtils'
 
+export const pageTitles = {
+  '/': 'Train with the best',
+  '/news': 'News',
+  '/history': 'Club',
+  '/achievements': 'Achievements',
+  '/gallery': 'Gallery',
+  '/camps': 'Camps',
+}
+
 export const sliderData = [
   {
     alt: 'facephoto',
@@ -51,10 +60,6 @@ export const links = [
   {
     title: getText('page.camps'),
     url: '/camps',
-  },
-  {
-    title: getText('page.information'),
-    url: '/information',
   },
 ]
 

@@ -61,10 +61,8 @@ export default function RootLayout({
                 fill={true}
                 className={styles.mainPhoto}
               />
-              <div className={styles.textContainer}>
-                <div className={styles.titleContainer}>
-                  <TitleText title="TRAIN WITH THE BEST" />
-                </div>
+              <div className={styles.titleContainer}>
+                <TitleText />
               </div>
             </div>
           </div>
