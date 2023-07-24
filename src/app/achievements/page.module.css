@@ -17,5 +17,9 @@
 }
 
 .events {
+  display: flex;
+  flex-direction: column;
+  word-break: break-all;
+  max-width: 250px;
   list-style-type: disc;
 }
