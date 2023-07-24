@@ -1,11 +1,15 @@
 import React from 'react'
+import styles from './icon.module.css'
 
 const Icon = ({ icon, size }) => {
   const iconUrl = `/icons/${icon}.svg`
   return (
-    <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
-      <use href={iconUrl} />
-    </svg>
+    <img
+      src={iconUrl}
+      className={styles.icon}
+      alt={icon}
+      style={{ width: size, height: size }}
+    />
   )
 }
 
