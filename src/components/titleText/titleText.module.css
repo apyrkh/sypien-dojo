@@ -3,6 +3,8 @@
   flex-direction: column;
   min-width: 300px;
   color: black;
+  justify-content: center;
+  align-items: center;
 }
 
 .title {
@@ -12,7 +14,8 @@
   text-transform: uppercase;
 }
 
-.desc {
-  color: white;
-  opacity: 0.6;
+@media screen and (max-width: 1024px) {
+  .title {
+    font-size: 35px;
+  }
 }
