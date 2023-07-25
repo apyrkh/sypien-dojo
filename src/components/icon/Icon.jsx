@@ -1,18 +1,12 @@
 import React from 'react'
 import styles from './icon.module.css'
-import Image from 'next/image'
 import '@/app/animations.css'
 
 const Icon = ({ icon, size, animation }) => {
-  const iconUrl = `/icons/${icon}.svg`
   return (
-    <Image
-      src={iconUrl}
-      className={`${styles.icon} ${animation}`}
-      alt={icon}
-      width={size}
-      height={size}
-    />
+    <svg className={`${styles.icon} ${animation}`} width={size} height={size}>
+      <use href={`/icons/feather-sprite.svg#${icon}`} />
+    </svg>
   )
 }
 
