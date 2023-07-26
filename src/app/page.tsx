@@ -1,3 +1,4 @@
+'use client'
 import Button from '@/components/button/Button'
 import styles from './page.module.css'
 import Coach from '@/components/coach/Coach'
@@ -5,6 +6,8 @@ import Slider from '@/components/slider/Slider'
 import Link from 'next/link'
 import EmbedMap from '@/components/EmbedMap/EmbedMap'
 import Image from 'next/image'
+import { useLoader } from '@/context/LoaderContext'
+import { useEffect } from 'react'
 
 const coaches = [
   {
@@ -20,6 +23,17 @@ const coaches = [
 ]
 
 export default function Home() {
+  const { setIsLoading } = useLoader()
+
+  useEffect(() => {
+    // Simulate some async operation
+    setIsLoading(true)
+
+    setTimeout(() => {
+      setIsLoading(false)
+    }, 2000)
+  }, [])
+
   return (
     <main className={styles.aMain}>
       <section className="news">

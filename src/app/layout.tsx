@@ -8,7 +8,7 @@ import Navbar from '@/components/navbar/Navbar'
 import Image from 'next/image'
 import TitleText from '@/components/titleText/TitleText'
 import Footer from '@/components/footer/Footer'
-import BlockLoaderProvider from '@/context/BlockLoaderProvider'
+import { LoaderProvider } from '@/context/LoaderContext'
 
 const inter = Montserrat({
   subsets: ['latin-ext'],
@@ -51,8 +51,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <BlockLoaderProvider>
-        <body className={inter.className}>
+      <body className={inter.className}>
+        <LoaderProvider>
           <header className={styles.header}>
             <div className={styles.welcomeContainer}>
               <Navbar />
@@ -73,9 +73,8 @@ export default function RootLayout({
           <footer className={styles.footer}>
             <Footer />
           </footer>
-        </body>
-        <div id="portal"></div>
-      </BlockLoaderProvider>
+        </LoaderProvider>
+      </body>
     </html>
   )
 }
