@@ -10,7 +10,7 @@ const FileDownload = ({ item }) => {
         {item.title}
       </Link>
       <Link className={styles.download} href={item.link}>
-        <Icon icon="download" size={30} animation="wobble" />
+        <Icon icon="download" size={30} animation="vibrate" />
       </Link>
     </div>
   )
