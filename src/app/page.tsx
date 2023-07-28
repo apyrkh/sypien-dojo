@@ -23,15 +23,19 @@ const coaches = [
 ]
 
 export default function Home() {
-  const { setIsLoading } = useLoader()
+  const { showLoader, hideLoader } = useLoader()
 
   useEffect(() => {
     // Simulate some async operation
-    setIsLoading(true)
+    showLoader()
 
-    setTimeout(() => {
-      setIsLoading(false)
-    }, 2000)
+    const timeoutId = setTimeout(() => {
+      hideLoader()
+    }, 5000)
+
+    return () => {
+      clearTimeout(timeoutId)
+    }
   }, [])
 
   return (
