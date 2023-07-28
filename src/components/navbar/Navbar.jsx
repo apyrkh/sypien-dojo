@@ -1,5 +1,6 @@
 'use client'
 import ContactUsButton from '@/components/navbar/ContactUsButton'
+import { useSession, signIn, signOut } from 'next-auth/react'
 import logoSrc from 'public/logo.png'
 import { getText } from '@/utils/textUtils'
 import Image from 'next/image'
@@ -10,6 +11,8 @@ import ThemeToggle from '@/components/themeToggle/ThemeToggle'
 import { links } from '@/constants/data'
 
 const Navbar = () => {
+  const { data: session, status } = useSession()
+  console.log(session)
   const [toggleMenu, setToggleMenu] = useState(false)
 
   return (
@@ -32,6 +35,33 @@ const Navbar = () => {
           <ThemeToggle />
         </div>
         <ContactUsButton />
+        {session && (
+          <>
+            <b>{session.user.name}</b>
+            <a
+              href={`/api/auth/signout`}
+              className={styles.button}
+              onClick={(e) => {
+                e.preventDefault()
+                signOut()
+              }}
+            >
+              Sign out
+            </a>
+          </>
+        )}
+        {!session && (
+          <a
+            href={`/api/auth/signin`}
+            className={styles.buttonPrimary}
+            onClick={(e) => {
+              e.preventDefault()
+              signIn()
+            }}
+          >
+            Sign in
+          </a>
+        )}
       </div>
       <div className={styles.burgerMenu}>
         <div
