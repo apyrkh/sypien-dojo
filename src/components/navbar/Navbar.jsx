@@ -9,6 +9,7 @@ import React, { useState } from 'react'
 import styles from './navbar.module.css'
 import ThemeToggle from '@/components/themeToggle/ThemeToggle'
 import { links } from '@/constants/data'
+import Icon from '@/components/icon/Icon'
 
 const Navbar = () => {
   const { data: session, status } = useSession()
@@ -38,29 +39,31 @@ const Navbar = () => {
         {session && (
           <>
             <b>{session.user.name}</b>
-            <a
+            <div
               href={`/api/auth/signout`}
-              className={styles.button}
+              className={styles.signOutBtn}
               onClick={(e) => {
                 e.preventDefault()
                 signOut()
               }}
             >
               Sign out
-            </a>
+              <Icon icon="log-out" size={20} color="white" />
+            </div>
           </>
         )}
         {!session && (
-          <a
+          <div
             href={`/api/auth/signin`}
-            className={styles.buttonPrimary}
+            className={styles.signInBtn}
             onClick={(e) => {
               e.preventDefault()
               signIn()
             }}
           >
+            <Icon icon="facebook" size={20} color="white" />
             Sign in
-          </a>
+          </div>
         )}
       </div>
       <div className={styles.burgerMenu}>
@@ -108,6 +111,33 @@ const Navbar = () => {
                 </Link>
               ))}
             </div>
+            {session && (
+              <div className={styles.fbContainer}>
+                <b>{session.user.name}</b>
+                <div
+                  href={`/api/auth/signout`}
+                  className={styles.signOutBtn}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    signOut()
+                  }}
+                >
+                  <Icon icon="log-out" size={20} color="white" />
+                </div>
+              </div>
+            )}
+            {!session && (
+              <div
+                href={`/api/auth/signin`}
+                className={styles.signInBtn}
+                onClick={(e) => {
+                  e.preventDefault()
+                  signIn()
+                }}
+              >
+                <Icon icon="facebook" size={20} color="white" />
+              </div>
+            )}
             <div
               className={styles.burgerMenuCloseIcon}
               onClick={() => setToggleMenu(false)}
