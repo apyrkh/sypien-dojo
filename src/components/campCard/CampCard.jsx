@@ -4,16 +4,29 @@ import React, { useState } from 'react'
 import { Collapse } from 'react-collapse'
 import './campCard.css'
 import FileDownload from '@/components/fileDownload/FileDownload'
-import { useLoader } from '@/context/LoaderContext.jsx'
-import BlockLoader from '@/components/blockLoader/BlockLoader'
+// import { useLoader } from '@/context/LoaderContext.jsx'
 
 const CampCard = ({ item }) => {
-  const { showLoader } = useLoader()
+  // const { showLoader, hideLoader } = useLoader()
   const [isOpened, setIsOpened] = useState(false)
   const handleClick = () => {
     setIsOpened((prev) => (prev = !prev))
   }
 
+  // uncomment to activate loader
+
+  // const awakeLoader = () => {
+  //   // Simulate some async operation
+  //   showLoader()
+
+  //   const timeoutId = setTimeout(() => {
+  //     hideLoader()
+  //   }, 5000)
+
+  //   return () => {
+  //     clearTimeout(timeoutId)
+  //   }
+  // }
   return (
     <div className="container">
       <div className="imgContainer" onClick={handleClick}>
