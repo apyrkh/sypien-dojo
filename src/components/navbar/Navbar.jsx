@@ -114,7 +114,7 @@ const Navbar = () => {
             {session && (
               <div className={styles.fbContainer}>
                 <b>{session.user.name}</b>
-                <div
+                <a
                   href={`/api/auth/signout`}
                   className={styles.signOutBtn}
                   onClick={(e) => {
@@ -123,11 +123,11 @@ const Navbar = () => {
                   }}
                 >
                   <Icon icon="log-out" size={20} color="white" />
-                </div>
+                </a>
               </div>
             )}
             {!session && (
-              <div
+              <a
                 href={`/api/auth/signin`}
                 className={styles.signInBtn}
                 onClick={(e) => {
@@ -136,7 +136,7 @@ const Navbar = () => {
                 }}
               >
                 <Icon icon="facebook" size={20} color="white" />
-              </div>
+              </a>
             )}
             <div
               className={styles.burgerMenuCloseIcon}
