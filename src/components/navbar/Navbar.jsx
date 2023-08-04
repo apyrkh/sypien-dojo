@@ -13,7 +13,6 @@ import Icon from '@/components/icon/Icon'
 
 const Navbar = () => {
   const { data: session, status } = useSession()
-  console.log(session)
   const [toggleMenu, setToggleMenu] = useState(false)
 
   return (
@@ -36,10 +35,11 @@ const Navbar = () => {
           <ThemeToggle />
         </div>
         <ContactUsButton />
+
         {session && (
           <>
-            <p className={styles.deskFbUsername}>{session.user.name}</p>
-            <div
+            <span className={styles.deskFbUsername}>{session.user.name}</span>
+            <a
               href={`/api/auth/signout`}
               className={styles.signOutBtn}
               onClick={(e) => {
@@ -47,25 +47,27 @@ const Navbar = () => {
                 signOut()
               }}
             >
-              Sign out
               <Icon icon="log-out" size={20} />
-            </div>
+              Sign out
+            </a>
           </>
         )}
+
         {!session && (
-          <div
+          <a
             href={`/api/auth/signin`}
             className={styles.signInBtn}
             onClick={(e) => {
               e.preventDefault()
-              signIn()
+              signIn('facebook', { callbackUrl: '/#' })
             }}
           >
             <Icon icon="facebook" size={20} />
             Sign in
-          </div>
+          </a>
         )}
       </div>
+
       <div className={styles.burgerMenu}>
         <div
           className={styles.burgerMenuIcon}
