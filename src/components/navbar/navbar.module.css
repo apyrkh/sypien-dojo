@@ -98,6 +98,9 @@
   font-weight: 600;
   cursor: pointer;
 }
+.deskFbUsername {
+  color: white;
+}
 
 .signInBtn:hover,
 .signOutBtn:hover {

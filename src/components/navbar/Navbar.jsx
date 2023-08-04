@@ -38,7 +38,7 @@ const Navbar = () => {
         <ContactUsButton />
         {session && (
           <>
-            <b>{session.user.name}</b>
+            <p className={styles.deskFbUsername}>{session.user.name}</p>
             <div
               href={`/api/auth/signout`}
               className={styles.signOutBtn}
@@ -48,7 +48,7 @@ const Navbar = () => {
               }}
             >
               Sign out
-              <Icon icon="log-out" size={20} color="white" />
+              <Icon icon="log-out" size={20} />
             </div>
           </>
         )}
@@ -61,7 +61,7 @@ const Navbar = () => {
               signIn()
             }}
           >
-            <Icon icon="facebook" size={20} color="white" />
+            <Icon icon="facebook" size={20} />
             Sign in
           </div>
         )}
@@ -122,7 +122,7 @@ const Navbar = () => {
                     signOut()
                   }}
                 >
-                  <Icon icon="log-out" size={20} color="white" />
+                  <Icon icon="log-out" size={20} />
                 </a>
               </div>
             )}
@@ -135,7 +135,7 @@ const Navbar = () => {
                   signIn()
                 }}
               >
-                <Icon icon="facebook" size={20} color="white" />
+                <Icon icon="facebook" size={20} />
               </a>
             )}
             <div
