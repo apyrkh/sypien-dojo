@@ -1,5 +1,6 @@
 'use client'
 import ContactUsButton from '@/components/navbar/ContactUsButton'
+import { useSession, signIn, signOut } from 'next-auth/react'
 import logoSrc from 'public/logo.png'
 import { getText } from '@/utils/textUtils'
 import Image from 'next/image'
@@ -8,8 +9,10 @@ import React, { useState } from 'react'
 import styles from './navbar.module.css'
 import ThemeToggle from '@/components/themeToggle/ThemeToggle'
 import { links } from '@/constants/data'
+import Icon from '@/components/icon/Icon'
 
 const Navbar = () => {
+  const { data: session, status } = useSession()
   const [toggleMenu, setToggleMenu] = useState(false)
 
   return (
@@ -32,7 +35,39 @@ const Navbar = () => {
           <ThemeToggle />
         </div>
         <ContactUsButton />
+
+        {session && (
+          <>
+            <span className={styles.deskFbUsername}>{session.user.name}</span>
+            <a
+              href={`/api/auth/signout`}
+              className={styles.signOutBtn}
+              onClick={(e) => {
+                e.preventDefault()
+                signOut()
+              }}
+            >
+              <Icon icon="log-out" size={20} />
+              Sign out
+            </a>
+          </>
+        )}
+
+        {!session && (
+          <a
+            href={`/api/auth/signin`}
+            className={styles.signInBtn}
+            onClick={(e) => {
+              e.preventDefault()
+              signIn('facebook', { callbackUrl: '/#' })
+            }}
+          >
+            <Icon icon="facebook" size={20} />
+            Sign in
+          </a>
+        )}
       </div>
+
       <div className={styles.burgerMenu}>
         <div
           className={styles.burgerMenuIcon}
@@ -48,20 +83,20 @@ const Navbar = () => {
             <path
               d="M4 18L20 18"
               stroke="#fff"
-              stroke-width="2"
-              stroke-linecap="round"
+              strokeWidth="2"
+              strokeLinecap="round"
             />
             <path
               d="M4 12L20 12"
               stroke="#fff"
-              stroke-width="2"
-              stroke-linecap="round"
+              strokeWidth="2"
+              strokeLinecap="round"
             />
             <path
               d="M4 6L20 6"
               stroke="#fff"
-              stroke-width="2"
-              stroke-linecap="round"
+              strokeWidth="2"
+              strokeLinecap="round"
             />
           </svg>
         </div>
@@ -78,6 +113,33 @@ const Navbar = () => {
                 </Link>
               ))}
             </div>
+            {session && (
+              <div className={styles.fbContainer}>
+                <b>{session.user.name}</b>
+                <a
+                  href={`/api/auth/signout`}
+                  className={styles.signOutBtn}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    signOut()
+                  }}
+                >
+                  <Icon icon="log-out" size={20} />
+                </a>
+              </div>
+            )}
+            {!session && (
+              <a
+                href={`/api/auth/signin`}
+                className={styles.signInBtn}
+                onClick={(e) => {
+                  e.preventDefault()
+                  signIn()
+                }}
+              >
+                <Icon icon="facebook" size={20} />
+              </a>
+            )}
             <div
               className={styles.burgerMenuCloseIcon}
               onClick={() => setToggleMenu(false)}
@@ -87,17 +149,17 @@ const Navbar = () => {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                 <g
                   id="SVGRepo_tracerCarrier"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 ></g>
                 <g id="SVGRepo_iconCarrier">
                   {' '}
                   <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M1.5 12C1.5 6.20101 6.20101 1.5 12 1.5C17.799 1.5 22.5 6.20101 22.5 12C22.5 17.799 17.799 22.5 12 22.5C6.20101 22.5 1.5 17.799 1.5 12ZM9.87896 8.81803C9.58607 8.52513 9.1112 8.52513 8.8183 8.81803C8.52541 9.11092 8.52541 9.5858 8.8183 9.87869L10.9396 12L8.81831 14.1213C8.52542 14.4142 8.52542 14.8891 8.81831 15.182C9.1112 15.4749 9.58608 15.4749 9.87897 15.182L12.0003 13.0607L14.1216 15.182C14.4145 15.4749 14.8894 15.4749 15.1823 15.182C15.4752 14.8891 15.4752 14.4142 15.1823 14.1213L13.0609 12L15.1823 9.87869C15.4752 9.5858 15.4752 9.11092 15.1823 8.81803C14.8894 8.52513 14.4145 8.52513 14.1216 8.81803L12.0003 10.9394L9.87896 8.81803Z"
                   ></path>{' '}
                 </g>
