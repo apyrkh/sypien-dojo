@@ -11,7 +11,7 @@ import ThemeToggle from '@/components/themeToggle/ThemeToggle'
 import { links } from '@/constants/data'
 import Icon from '@/components/icon/Icon'
 import { usePathname } from 'next/navigation'
-import { getDisplayName } from 'next/dist/shared/lib/utils'
+
 const Navbar = () => {
   const { data: session, status } = useSession()
   const [toggleMenu, setToggleMenu] = useState(false)
@@ -123,6 +123,7 @@ const Navbar = () => {
                   key={link.url}
                   href={link.url}
                   className={styles.burgerLink}
+                  onClick={() => setToggleMenu(false)}
                 >
                   {link.title}
                 </Link>
