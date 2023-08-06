@@ -10,11 +10,12 @@ import styles from './navbar.module.css'
 import ThemeToggle from '@/components/themeToggle/ThemeToggle'
 import { links } from '@/constants/data'
 import Icon from '@/components/icon/Icon'
-
+import { usePathname } from 'next/navigation'
+import { getDisplayName } from 'next/dist/shared/lib/utils'
 const Navbar = () => {
   const { data: session, status } = useSession()
   const [toggleMenu, setToggleMenu] = useState(false)
-
+  const pathname = usePathname()
   return (
     <div className={styles.container}>
       <div className={styles.mainNavbar}>
@@ -28,8 +29,22 @@ const Navbar = () => {
 
         <div className={styles.links}>
           {links.map((link) => (
-            <Link key={link.url} href={link.url} className={styles.link}>
+            <Link
+              key={link.url}
+              href={link.url}
+              className={
+                link.url === pathname ? styles.currentPage : styles.link
+              }
+            >
               {link.title}
+              <div
+                style={
+                  link.url === pathname
+                    ? { display: 'flex' }
+                    : { display: 'none' }
+                }
+                className={styles.line}
+              />
             </Link>
           ))}
           <ThemeToggle />
