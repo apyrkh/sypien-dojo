@@ -21,7 +21,7 @@
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   -webkit-animation-iteration-count: infinite;
-  color: white;
+  color: var(--bg-color);
 }
 .download:hover {
   cursor: pointer;
