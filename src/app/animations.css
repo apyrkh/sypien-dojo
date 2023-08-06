@@ -1,6 +1,6 @@
 /* animations are taken from AnimatiSS */
 
-.wobble:hover {
+.a-wobble:hover {
   animation: wobble 0.8s linear both;
 }
 @keyframes wobble {
@@ -26,7 +26,7 @@
   }
 }
 
-.vibrate:hover {
+.a-vibrate:hover {
   animation: vibrate 1s linear both infinite;
 }
 @keyframes vibrate {
