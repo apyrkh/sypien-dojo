@@ -1,6 +1,7 @@
 'use client'
 import ContactUsButton from '@/components/navbar/ContactUsButton'
 import { useSession, signIn, signOut } from 'next-auth/react'
+import { usePathname } from 'next/navigation'
 import logoSrc from 'public/logo.png'
 import { getText } from '@/utils/textUtils'
 import Image from 'next/image'
@@ -16,6 +17,7 @@ const Navbar = () => {
   const { data: session, status } = useSession()
   const [toggleMenu, setToggleMenu] = useState(false)
   const pathname = usePathname()
+
   return (
     <div className={styles.container}>
       <div className={styles.mainNavbar}>
@@ -68,7 +70,7 @@ const Navbar = () => {
           </>
         )}
 
-        {!session && (
+        {!session && pathname === '/admin' && (
           <a
             href={`/api/auth/signin`}
             className={styles.signInBtn}
