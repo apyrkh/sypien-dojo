@@ -229,3 +229,9 @@ export const camps = [
     ],
   },
 ]
+
+export const mainImages = {
+  '/': 'https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/349822493_1343360363190610_865042745079130226_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=jD8Cr9Bm8xgAX97nQic&_nc_ht=scontent-waw1-1.xx&oh=00_AfCq5i4JwyYwIMGmiSpp8FFtFYODFqrSxPBcL3AvsoHlaQ&oe=64D93A3E',
+  '/news':
+    'https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/349289131_1301866100541778_9221896404700928498_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=dd63ad&_nc_ohc=3Sm2fB-PNlIAX-UlQNH&_nc_ht=scontent-waw1-1.xx&oh=00_AfDu0vGnIkOn3qlL8B4tW0bYvJFSYPpmjq3PPA3Fqczvrw&oe=64DA8578',
+}

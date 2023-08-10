@@ -14,11 +14,12 @@
   align-items: center;
 }
 
-.mainPhoto {
+/* fix this line (filter styling needs to be changed) */
+/* .mainPhoto {
   object-fit: cover;
   z-index: 0;
-  filter: blur(3px) brightness(0.4); /* fix this line (filter styling needs to be changed) */
-}
+  filter: blur(3px) brightness(0.4); 
+} */
 
 .titleContainer {
   display: flex;
