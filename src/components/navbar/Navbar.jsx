@@ -11,7 +11,6 @@ import styles from './navbar.module.css'
 import ThemeToggle from '@/components/themeToggle/ThemeToggle'
 import { links } from '@/constants/data'
 import Icon from '@/components/icon/Icon'
-import { usePathname } from 'next/navigation'
 
 const Navbar = () => {
   const { data: session, status } = useSession()
