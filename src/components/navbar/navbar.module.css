@@ -113,13 +113,113 @@
   font-weight: 600;
   cursor: pointer;
 }
+
+.userPhoto {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.deskUser {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.deskFbUsernameContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.3);
+  padding-bottom: 20px;
+}
+
 .deskFbUsername {
-  color: white;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 1);
 }
 
 .signInBtn:hover,
 .signOutBtn:hover {
   background-color: #035edd;
+}
+
+.mobileUserContainer {
+  display: flex;
+}
+
+/*dropdown*/
+.menuTrigger {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100px;
+  right: 20px;
+  background-color: #fff;
+  border-radius: 2px;
+  padding: 10px 20px;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdownMenu::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  right: 20px;
+  height: 20px;
+  width: 20px;
+  background: #fff;
+  transform: rotate(45deg);
+}
+
+.dropdownMenu ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdownMenu ul li {
+  padding: 10px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dropdownItem,
+.dropdownItem a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: black;
+}
+
+.dropdownItem a:hover {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.dropdownActive {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: 500ms ease;
+}
+
+.dropdownInactive {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: 500ms ease;
 }
 
 @media screen and (max-width: 1023px) {
