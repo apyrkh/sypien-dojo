@@ -16,7 +16,7 @@ function DropdownItem({ text }) {
   return (
     <li className={styles.dropdownItem}>
       <Icon icon="link-2" size={24} />
-      <Link href="#">{text}</Link>
+      <Link href={url}>{text}</Link>
     </li>
   )
 }
@@ -91,8 +91,8 @@ const Navbar = () => {
                     </div>
                   </div>
                   <ul>
-                    <DropdownItem text="Link1" />
-                    <DropdownItem text="Link2" />
+                    <DropdownItem text="Link1" url="#" />
+                    <DropdownItem text="Link2" url="#" />
                     <li>
                       <a
                         href={`/api/auth/signout`}
