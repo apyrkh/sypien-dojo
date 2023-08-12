@@ -12,7 +12,7 @@ import ThemeToggle from '@/components/themeToggle/ThemeToggle'
 import { links } from '@/constants/data'
 import Icon from '@/components/icon/Icon'
 
-function DropdownItem({ text }) {
+function DropdownItem({ text, url }) {
   return (
     <li className={styles.dropdownItem}>
       <Icon icon="link-2" size={24} />
