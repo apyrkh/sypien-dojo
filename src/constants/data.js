@@ -1,5 +1,12 @@
 import { getText } from '@/utils/textUtils'
-
+//start of mainImages imports
+import homePhoto from 'public/img/homePhoto.jpeg'
+import newsPhoto from 'public/img/newsPagePhoto.jpeg'
+import historyPhoto from 'public/img/clubPhoto.jpeg'
+import achievementsPhoto from 'public/img/achievementsPhoto.jpeg'
+import galleryPhoto from 'public/img/galleryPhoto.jpeg'
+import campsPhoto from 'public/img/campsPhoto.jpeg'
+//end of mainImages imports
 export const pageTitles = {
   '/': 'Train with the best',
   '/news': 'News',
@@ -231,15 +238,10 @@ export const camps = [
 ]
 
 export const mainImages = {
-  '/': 'https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/349822493_1343360363190610_865042745079130226_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=jD8Cr9Bm8xgAX97nQic&_nc_ht=scontent-waw1-1.xx&oh=00_AfCq5i4JwyYwIMGmiSpp8FFtFYODFqrSxPBcL3AvsoHlaQ&oe=64D93A3E',
-  '/news':
-    'https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/321019538_575373247369039_6193953475628902575_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=300f58&_nc_ohc=tFFI6aCZ2-gAX9i5hCV&_nc_ht=scontent-waw1-1.xx&oh=00_AfBruKTGsliPCq49_22DU6E9loDaQZdiHpexQ_pHmRZ3lg&oe=64DB5D2E',
-  '/history':
-    'https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/349289131_1301866100541778_9221896404700928498_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=dd63ad&_nc_ohc=3Sm2fB-PNlIAX-UlQNH&_nc_ht=scontent-waw1-1.xx&oh=00_AfDu0vGnIkOn3qlL8B4tW0bYvJFSYPpmjq3PPA3Fqczvrw&oe=64DA8578',
-  '/achievements':
-    'https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/349132231_919927909308981_6758100242440393011_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=dd63ad&_nc_ohc=NGIVCDNZ0i0AX_L3wrs&_nc_ht=scontent-waw1-1.xx&oh=00_AfBdTw5gXOQDbDydyF_aX9Qn2JFrYe3_ov6WI7wNjqNkZg&oe=64DB47F9',
-  '/gallery':
-    'https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/350773719_6924989620862388_3162336663657966256_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=7f8c78&_nc_ohc=iPenv-22JbgAX8XVwwR&_nc_ht=scontent-waw1-1.xx&oh=00_AfDaY2lLv7gC1FPZ5Mthj1es1qXhych7Ch8zchcbVfXNKw&oe=64DB6C8E',
-  '/camps':
-    'https://scontent-waw1-1.xx.fbcdn.net/v/t39.30808-6/366933960_758468702950587_758594917517116614_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=dd63ad&_nc_ohc=GDwfXX9cob4AX_GQJwx&_nc_ht=scontent-waw1-1.xx&oh=00_AfBD8Z0fNgVw3sm6Y2N1wbDxtcynH8Q-92nmTcLZXhECGw&oe=64DB9864',
+  '/': homePhoto,
+  '/news': newsPhoto,
+  '/history': historyPhoto,
+  '/achievements': achievementsPhoto,
+  '/gallery': galleryPhoto,
+  '/camps': campsPhoto,
 }
