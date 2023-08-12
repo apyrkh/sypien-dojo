@@ -7,17 +7,13 @@ import { mainImages } from '@/constants/data'
 
 const MainImage = () => {
   const pathname = usePathname()
-  console.log(pathname)
-  console.log(mainImages[pathname])
   return (
-    <>
-      <Image
-        src={mainImages[pathname]}
-        alt="Title-Photo"
-        fill={true}
-        className={styles.mainPhoto}
-      />
-    </>
+    <Image
+      src={mainImages[pathname]}
+      alt="Title-Photo"
+      fill={true}
+      className={styles.mainPhoto}
+    />
   )
 }
 
