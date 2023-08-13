@@ -31,7 +31,7 @@ export default function Home() {
 
     const timeoutId = setTimeout(() => {
       hideLoader()
-    }, 5000)
+    }, 1000)
 
     return () => {
       clearTimeout(timeoutId)

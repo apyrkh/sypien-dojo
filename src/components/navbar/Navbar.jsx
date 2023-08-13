@@ -12,7 +12,17 @@ import ThemeToggle from '@/components/themeToggle/ThemeToggle'
 import { links } from '@/constants/data'
 import Icon from '@/components/icon/Icon'
 
+function DropdownItem({ text, url }) {
+  return (
+    <li className={styles.dropdownItem}>
+      <Icon icon="link-2" size={24} />
+      <Link href={url}>{text}</Link>
+    </li>
+  )
+}
+
 const Navbar = () => {
+  const [open, setOpen] = useState(false)
   const { data: session, status } = useSession()
   const [toggleMenu, setToggleMenu] = useState(false)
   const pathname = usePathname()
@@ -54,18 +64,52 @@ const Navbar = () => {
 
         {session && (
           <>
-            <span className={styles.deskFbUsername}>{session.user.name}</span>
-            <a
-              href={`/api/auth/signout`}
-              className={styles.signOutBtn}
-              onClick={(e) => {
-                e.preventDefault()
-                signOut()
-              }}
-            >
-              <Icon icon="log-out" size={20} />
-              Sign out
-            </a>
+            <div className={styles.deskUser}>
+              <div className={styles.menuContainer}>
+                <div
+                  className={styles.menuTrigger}
+                  onClick={() => setOpen(!open)}
+                >
+                  <div className={styles.userPhoto}>
+                    <Image
+                      src={session.user.image}
+                      alt={`Logged-in ${session.user.name}'s avatar.`}
+                      width={60}
+                      height={60}
+                    />
+                  </div>
+                </div>
+                <div
+                  className={`${styles.dropdownMenu} ${
+                    open ? styles.dropdownActive : styles.dropdownInactive
+                  }`}
+                >
+                  <div className={styles.deskFbUsernameContainer}>
+                    Signed in as
+                    <div className={styles.deskFbUsername}>
+                      {session.user.name}
+                    </div>
+                  </div>
+                  <ul>
+                    <DropdownItem text="Link1" url="#" />
+                    <DropdownItem text="Link2" url="#" />
+                    <li>
+                      <a
+                        href={`/api/auth/signout`}
+                        className={styles.signOutBtn}
+                        onClick={(e) => {
+                          e.preventDefault()
+                          signOut()
+                        }}
+                      >
+                        <Icon icon="log-out" size={20} />
+                        Sign out
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </>
         )}
 
@@ -132,7 +176,17 @@ const Navbar = () => {
             </div>
             {session && (
               <div className={styles.fbContainer}>
-                <b>{session.user.name}</b>
+                <div className={styles.mobileUserContainer}>
+                  <div className={styles.userPhoto}>
+                    <Image
+                      src={session.user.image}
+                      alt={`${session.user.name}`}
+                      width={50}
+                      height={50}
+                    />
+                  </div>
+                  {/* <b>{session.user.name}</b> */}
+                </div>
                 <a
                   href={`/api/auth/signout`}
                   className={styles.signOutBtn}
