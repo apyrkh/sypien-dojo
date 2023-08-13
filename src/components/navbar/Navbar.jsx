@@ -119,7 +119,7 @@ const Navbar = () => {
             className={styles.signInBtn}
             onClick={(e) => {
               e.preventDefault()
-              signIn('facebook', { callbackUrl: '/#' })
+              signIn('facebook', { callbackUrl: '/admin#' })
             }}
           >
             <Icon icon="facebook" size={20} />

@@ -1,16 +1,53 @@
+import { nextAuthAdapter } from '@server/db/nextAuthAdapter'
+import { createUpdatePage } from '@server/db/services/pageService'
+import { getExtendedAccessToken } from '@server/fb/services/fbOauthService'
+import { getPageData } from '@server/fb/services/fbPageService'
+import dayjs from 'dayjs'
 import NextAuth from 'next-auth'
 import Facebook from 'next-auth/providers/facebook'
-import { nextAuthAdapter } from '@db/nextAuthAdapter'
+import { appConfig } from '../../../../../app.config'
 
 const handler = NextAuth({
   // @ts-expect-error: issues in adapter
   adapter: nextAuthAdapter,
   callbacks: {
     async signIn({ user, account, profile }) {
+      if (!account || !account.access_token) return false
+
+      // @TODO: remove consoles
       console.log('user', user)
       console.log('account', account)
       console.log('profile', profile)
-      return true
+
+      try {
+        const pageData = await getPageData(
+          appConfig.fb.watchedPagesIds[0],
+          account.access_token,
+        )
+
+        // @TODO: implement to not extend token every time
+        const extendedToken = await getExtendedAccessToken(
+          pageData.access_token,
+        )
+
+        await createUpdatePage({
+          provider: account.provider,
+          providerAccountId: account.providerAccountId,
+          pageId: pageData.id,
+          pageName: pageData.name,
+          accessToken: extendedToken.access_token,
+          tokenType: extendedToken.token_type,
+          expiresAt: Math.trunc(
+            dayjs().add(60, 'days').toDate().getTime() / 1000,
+          ),
+        })
+
+        return true
+      } catch (e) {
+        console.error(e)
+
+        return false
+      }
     },
     // async redirect({ baseUrl, ...qq }) {
     //   console.log('redirect', qq)
@@ -30,10 +67,8 @@ const handler = NextAuth({
     // https://github.com/nextauthjs/next-auth/issues/532
     // https://stackoverflow.com/questions/7131909/facebook-callback-appends-to-return-url
     Facebook({
-      // @ts-expect-error: it is required
-      clientId: process.env.FACEBOOK_ID,
-      // @ts-expect-error: it is required
-      clientSecret: process.env.FACEBOOK_SECRET,
+      clientId: appConfig.fb.appId,
+      clientSecret: appConfig.fb.appSecret,
       authorization:
         'https://www.facebook.com/v17.0/dialog/oauth?scope=email,pages_show_list,pages_read_user_content',
     }),

@@ -4,11 +4,13 @@
 
 ### Env variables
 
-- `DATABASE_URL` path to PostgreSQL
 - `NEXTAUTH_URL` path to app (domain) for next auth
 - `NEXTAUTH_SECRET` secret for next auth
+- `DATABASE_URL` path to PostgreSQL
+- `DATABASE_NAME` name of database
 - `FACEBOOK_ID` facebook app ID
 - `FACEBOOK_SECRET` facebook app secret
+- `FACEBOOK_WATCHED_PAGES_IDS` comma-separated list of watched facebook pages
 
 ### Scripts 
 

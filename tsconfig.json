@@ -24,7 +24,7 @@
     "noUnusedParameters": true,
     "paths": {
       "@/*": ["./src/*"],
-      "@db/*": ["./db/*"]
+      "@server/*": ["./server/*"]
     },
     "preserveConstEnums": true,
     "resolveJsonModule": true,

@@ -1,4 +1,4 @@
-import { getOrm } from '../db/orm' // or any other driver package
+import { getOrm } from '@server/db/orm'
 
 // https://mikro-orm.io/docs/schema-generator/#using-schemagenerator-programmatically
 ;(async () => {
