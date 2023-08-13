@@ -3,6 +3,8 @@ export const appConfig = {
   db: {
     dbUrl: process.env.DATABASE_URL!,
     dbName: process.env.DATABASE_NAME!,
+    dbUser: process.env.DATABASE_USER!,
+    dbPassword: process.env.DATABASE_PASSWORD!,
   },
   fb: {
     appId: process.env.FACEBOOK_ID!,

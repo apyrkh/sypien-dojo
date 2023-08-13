@@ -7,6 +7,8 @@ export const getOrmConfig = () =>
   defineConfig({
     clientUrl: appConfig.db.dbUrl,
     dbName: appConfig.db.dbName,
+    user: appConfig.db.dbUser,
+    password: appConfig.db.dbPassword,
     entities: [...Object.values(defaultEntities), Page],
     discovery: { disableDynamicFileAccess: false },
     forceUtcTimezone: true,

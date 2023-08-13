@@ -24,4 +24,21 @@ npm run script <path_to_file> - runs script
 npm run dev
 ```
 
+### Postgres
+
+- `psql -U <user>`
+  - `CREATE DATABASE <db_name>;`
+  - `CREATE USER <user_name> WITH ENCRYPTED PASSWORD '<password>'`
+  - `\c <db_name>;`
+  - `GRANT ALL ON SCHEMA public TO <user_name>;`
+  - ` \c <database> <user>;`
+
+#### Create db for the project
+
+- `psql -U postgres` connect to db
+    - `CREATE DATABASE sypien_dojo;`
+    - `CREATE USER sypien_dojo WITH ENCRYPTED PASSWORD 'admin';`
+    - `\c sypien_dojo;`
+    - `GRANT ALL ON SCHEMA public TO sypien_dojo;`
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
