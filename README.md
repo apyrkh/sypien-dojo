@@ -18,7 +18,8 @@
 npm run script <path_to_file> - runs script
 ```
 
-- `pg-generate-schema.ts` generates initial DB schema
+- `pg-create-schema.ts` creates initial DB schema
+- `pg-update-schema.ts` updates initial DB schema
 
 ```bash
 npm run dev
