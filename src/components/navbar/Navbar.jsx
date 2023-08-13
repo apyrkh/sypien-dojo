@@ -73,7 +73,7 @@ const Navbar = () => {
                   <div className={styles.userPhoto}>
                     <Image
                       src={session.user.image}
-                      alt={`${session.user.name}`}
+                      alt={`Logged-in ${session.user.name}'s avatar.`}
                       width={60}
                       height={60}
                     />
