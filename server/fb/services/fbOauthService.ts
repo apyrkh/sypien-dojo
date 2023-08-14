@@ -14,6 +14,7 @@ export const getExtendedAccessToken = async (
   const urlParams = new URLSearchParams({
     client_id: appConfig.fb.appId,
     client_secret: appConfig.fb.appSecret,
+    grant_type: 'fb_exchange_token',
     fb_exchange_token: accessToken,
   })
   const url = new URL(`${API_BASE_URL}/oauth/access_token?${urlParams}`)
