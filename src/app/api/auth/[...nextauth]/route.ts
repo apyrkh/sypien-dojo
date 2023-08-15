@@ -4,10 +4,11 @@ import { getExtendedAccessToken } from '@server/fb/services/fbOauthService'
 import { getPageData } from '@server/fb/services/fbPageService'
 import dayjs from 'dayjs'
 import NextAuth from 'next-auth'
+import type { NextAuthOptions } from 'next-auth'
 import Facebook from 'next-auth/providers/facebook'
 import { appConfig } from '../../../../../app.config'
 
-const handler = NextAuth({
+export const authOptions: NextAuthOptions = {
   // @ts-expect-error: issues in adapter
   adapter: nextAuthAdapter,
   callbacks: {
@@ -73,6 +74,7 @@ const handler = NextAuth({
         'https://www.facebook.com/v17.0/dialog/oauth?scope=email,pages_show_list,pages_read_user_content',
     }),
   ],
-})
+}
 
+const handler = NextAuth(authOptions)
 export { handler as GET, handler as POST }

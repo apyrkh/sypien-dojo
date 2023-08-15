@@ -1,6 +1,20 @@
 import { Page } from '../entities/Page'
 import { getOrm } from '../orm'
 
+export const getPages = async () => {
+  const orm = await getOrm()
+  const em = orm.em.fork()
+
+  return em.find(Page, { provider: 'facebook' })
+}
+
+export const getPage = async (id: string) => {
+  const orm = await getOrm()
+  const em = orm.em.fork()
+
+  return em.findOne(Page, id)
+}
+
 export const createUpdatePage = async (pageData: {
   provider: string
   providerAccountId: string
