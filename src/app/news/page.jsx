@@ -3,6 +3,11 @@ import styles from './page.module.css'
 import NewsBox from '@/components/newsBox/NewsBox'
 import Image from 'next/image'
 import { allNews } from '@/constants/data'
+import { getText } from '@/utils/textUtils'
+export const metadata = {
+  title: `${getText('home.meta.title')} | ${getText('page.news')}`,
+  description: getText('home.meta.description'),
+}
 
 const newsBoxes = [
   {
