@@ -21,8 +21,8 @@ export class Page {
   @Property({ type: 'string', serializer: (value) => `***${value.slice(-4)}` })
   accessToken: string
 
-  @Property({ type: 'integer' })
-  expiresAt: number
+  @Property({ type: 'datetime' })
+  expiresAt: Date
 
   @Property({ type: 'string' })
   tokenType: string

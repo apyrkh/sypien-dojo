@@ -22,7 +22,7 @@ export const createUpdatePage = async (pageData: {
   pageName: string
   accessToken: string
   tokenType: string
-  expiresAt: number
+  expiresAt: Date
 }) => {
   const orm = await getOrm()
   const em = orm.em.fork()

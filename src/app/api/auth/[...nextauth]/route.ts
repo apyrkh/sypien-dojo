@@ -38,9 +38,7 @@ export const authOptions: NextAuthOptions = {
           pageName: pageData.name,
           accessToken: extendedToken.access_token,
           tokenType: extendedToken.token_type,
-          expiresAt: Math.trunc(
-            dayjs().add(60, 'days').toDate().getTime() / 1000,
-          ),
+          expiresAt: dayjs().add(extendedToken.expires_in, 'seconds').toDate(),
         })
 
         return true
