@@ -1,16 +1,13 @@
 import { Entity, PrimaryKey, Property, Unique } from '@mikro-orm/core'
 
 @Entity()
-@Unique({ properties: ['provider', 'providerAccountId', 'pageId'] })
+@Unique({ properties: ['provider', 'pageId'] })
 export class Page {
   @PrimaryKey({ type: 'uuid' })
   id: string = crypto.randomUUID()
 
   @Property({ type: 'string' })
   provider: string
-
-  @Property({ type: 'string' })
-  providerAccountId: string
 
   @Property({ type: 'string' })
   pageId: string

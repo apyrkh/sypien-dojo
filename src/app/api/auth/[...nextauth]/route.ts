@@ -33,7 +33,6 @@ export const authOptions: NextAuthOptions = {
 
         await createUpdatePage({
           provider: account.provider,
-          providerAccountId: account.providerAccountId,
           pageId: pageData.id,
           pageName: pageData.name,
           accessToken: extendedToken.access_token,

@@ -17,7 +17,6 @@ export const getPage = async (id: string) => {
 
 export const createUpdatePage = async (pageData: {
   provider: string
-  providerAccountId: string
   pageId: string
   pageName: string
   accessToken: string
@@ -30,13 +29,11 @@ export const createUpdatePage = async (pageData: {
   const pageRepository = em.getRepository(Page)
   let page = await pageRepository.findOne({
     provider: pageData.provider,
-    providerAccountId: pageData.providerAccountId,
     pageId: pageData.pageId,
   })
   if (!page) {
     page = new Page()
     page.provider = pageData.provider
-    page.providerAccountId = pageData.providerAccountId
     page.pageId = pageData.pageId
   }
 
