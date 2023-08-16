@@ -4,6 +4,11 @@ import CampCard from '@/components/campCard/CampCard'
 import { camps } from '@/constants/data'
 import { getText } from '@/utils/textUtils'
 
+export const metadata = {
+  title: `${getText('home.meta.title')} | ${getText('page.camps')}`,
+  description: getText('home.meta.description'),
+}
+
 const Camps = () => {
   return (
     <div className={styles.container}>
