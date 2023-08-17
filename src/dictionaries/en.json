@@ -1,0 +1,16 @@
+{
+  "navbar": {
+    "contact_us": "Contact",
+
+    "logo.alt": "Logo",
+
+    "home": "Home",
+    "news": "News",
+    "club": "Club",
+    "achievements": "Achievements",
+    "gallery": "Gallery",
+    "camps": "Camps",
+    "information": "Information"
+  },
+  "home": {}
+}

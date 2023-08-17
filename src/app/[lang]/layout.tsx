@@ -1,16 +1,21 @@
 import 'the-new-css-reset/css/reset.css'
 import './globals.css'
 import styles from './layout.module.css'
-import { NextAuthProvider } from '@/app/nextAuthProvider'
+import { NextAuthProvider } from '@/app/[lang]/nextAuthProvider'
 import { getText } from '@/utils/textUtils'
 import { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
-import Navbar from '@/components/navbar/Navbar'
-import MainImage from '@/components/mainImage/MainImage'
-import TitleText from '@/components/titleText/TitleText'
-import Footer from '@/components/footer/Footer'
+import Navbar from '@/app/[lang]/components/navbar/Navbar'
+import MainImage from '@/app/[lang]/components/mainImage/MainImage'
+import TitleText from '@/app/[lang]/components/titleText/TitleText'
+import Footer from '@/app/[lang]/components/footer/Footer'
 import { LoaderProvider } from '@/context/LoaderContext'
-import BlockLoader from '@/components/blockLoader/BlockLoader'
+import BlockLoader from '@/app/[lang]/components/blockLoader/BlockLoader'
+import { i18n } from 'i18n-config'
+
+export async function generateStaticParams() {
+  return i18n.locales.map((locale) => ({ lang: locale }))
+}
 
 const inter = Montserrat({
   subsets: ['latin-ext'],
@@ -48,18 +53,20 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  params,
 }: {
   children: React.ReactNode
+  params: { lang: string }
 }) {
   return (
-    <html lang="en">
+    <html lang={params.lang}>
       <body className={inter.className}>
         <NextAuthProvider>
           <LoaderProvider>
             <BlockLoader />
             <header className={styles.header}>
               <div className={styles.welcomeContainer}>
-                <Navbar />
+                <Navbar lang={params.lang} />
                 <div className={styles.imgContainer}>
                   <MainImage />
                   <div className={styles.titleContainer}>

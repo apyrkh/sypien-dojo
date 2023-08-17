@@ -1,11 +1,11 @@
 import { getText } from '@/utils/textUtils'
 //start of mainImages imports
-import homePhoto from '@/components/mainImage/img/homePhoto.jpeg'
-import newsPhoto from '@/components/mainImage/img/newsPagePhoto.jpeg'
-import historyPhoto from '@/components/mainImage/img/clubPhoto.jpeg'
-import achievementsPhoto from '@/components/mainImage/img/achievementsPhoto.jpeg'
-import galleryPhoto from '@/components/mainImage/img/galleryPhoto.jpeg'
-import campsPhoto from '@/components/mainImage/img/campsPhoto.jpeg'
+import homePhoto from '@/app/[lang]/components/mainImage/img/homePhoto.jpeg'
+import newsPhoto from '@/app/[lang]/components/mainImage/img/newsPagePhoto.jpeg'
+import historyPhoto from '@/app/[lang]/components/mainImage/img/clubPhoto.jpeg'
+import achievementsPhoto from '@/app/[lang]/components/mainImage/img/achievementsPhoto.jpeg'
+import galleryPhoto from '@/app/[lang]/components/mainImage/img/galleryPhoto.jpeg'
+import campsPhoto from '@/app/[lang]/components/mainImage/img/campsPhoto.jpeg'
 //end of mainImages imports
 export const pageTitles = {
   '/': 'Train with the best',

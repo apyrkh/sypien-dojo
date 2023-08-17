@@ -1,13 +1,15 @@
 'use client'
-import Button from '@/components/button/Button'
+import Button from '@/app/[lang]/components/button/Button'
 import styles from './page.module.css'
-import Coach from '@/components/coach/Coach'
-import Slider from '@/components/slider/Slider'
+import Coach from '@/app/[lang]/components/coach/Coach'
+import Slider from '@/app/[lang]/components/slider/Slider'
 import Link from 'next/link'
-import EmbedMap from '@/components/EmbedMap/EmbedMap'
+import EmbedMap from '@/app/[lang]/components/EmbedMap/EmbedMap'
 import Image from 'next/image'
 import { useLoader } from '@/context/LoaderContext'
 import { useEffect } from 'react'
+import { getDictionary } from 'get-dictionary'
+import { Locale } from 'i18n-config'
 
 const coaches = [
   {
@@ -22,9 +24,13 @@ const coaches = [
   },
 ]
 
-export default function Home() {
+export default function Home({
+  params: { lang },
+}: {
+  params: { lang: Locale }
+}) {
   const { showLoader, hideLoader } = useLoader()
-
+  // const dictionary = await getDictionary()
   useEffect(() => {
     // Simulate some async operation
     showLoader()
