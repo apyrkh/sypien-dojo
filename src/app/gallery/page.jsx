@@ -1,4 +1,5 @@
 import React from 'react'
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import styles from './page.module.css'
 import GalleryComponent from '@/components/galleryComponent/GalleryComponent'
 import { getText } from '@/utils/textUtils'
