@@ -3,7 +3,7 @@ import Image from 'next/image'
 import React, { useState } from 'react'
 import { Collapse } from 'react-collapse'
 import './campCard.css'
-import FileDownload from '@/components/fileDownload/FileDownload'
+import FileDownload from '@/app/[lang]/components/fileDownload/FileDownload'
 // import { useLoader } from '@/context/LoaderContext.jsx'
 
 const CampCard = ({ item }) => {

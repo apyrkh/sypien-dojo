@@ -12,5 +12,8 @@
     "camps": "Obozy",
     "information": "Informacje"
   },
-  "home": {}
+  "home": {},
+  "camps": {
+    "title": "Obozy"
+  }
 }

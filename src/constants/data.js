@@ -8,7 +8,7 @@ import galleryPhoto from '@/app/[lang]/components/mainImage/img/galleryPhoto.jpe
 import campsPhoto from '@/app/[lang]/components/mainImage/img/campsPhoto.jpeg'
 //end of mainImages imports
 export const pageTitles = {
-  '/': 'Train with the best',
+  '/en': 'Train with the best',
   '/news': 'News',
   '/history': 'Club',
   '/achievements': 'Achievements',

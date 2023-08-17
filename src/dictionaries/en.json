@@ -12,5 +12,8 @@
     "camps": "Camps",
     "information": "Information"
   },
-  "home": {}
+  "home": {},
+  "camps": {
+    "title": "Camps"
+  }
 }
