@@ -1,5 +1,5 @@
 'use client'
-import ContactUsButton from '@/components/navbar/ContactUsButton'
+import ContactUsButton from '@/app/[lang]/components/navbar/ContactUsButton'
 import { useSession, signIn, signOut } from 'next-auth/react'
 import { usePathname } from 'next/navigation'
 import logoSrc from 'public/logo.png'
@@ -8,9 +8,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
 import styles from './navbar.module.css'
-import ThemeToggle from '@/components/themeToggle/ThemeToggle'
-import { links } from '@/constants/data'
-import Icon from '@/components/icon/Icon'
+import ThemeToggle from '@/app/[lang]/components/themeToggle/ThemeToggle'
+// import { links } from '@/constants/data'
+import Icon from '@/app/[lang]/components/icon/Icon'
+// import { getDictionary } from 'get-dictionary'
 
 function DropdownItem({ text, url }) {
   return (
@@ -21,11 +22,38 @@ function DropdownItem({ text, url }) {
   )
 }
 
-const Navbar = () => {
+const Navbar = ({ lang }) => {
   const [open, setOpen] = useState(false)
   const { data: session, status } = useSession()
   const [toggleMenu, setToggleMenu] = useState(false)
   const pathname = usePathname()
+  // const dict = await getDictionary(lang)
+  const links = [
+    {
+      title: getText('page.home'),
+      url: '/',
+    },
+    {
+      title: getText('page.news'),
+      url: '/news',
+    },
+    {
+      title: getText('page.club'),
+      url: '/history',
+    },
+    {
+      title: getText('page.achievements'),
+      url: '/achievements',
+    },
+    {
+      title: getText('page.gallery'),
+      url: '/gallery',
+    },
+    {
+      title: getText('page.camps'),
+      url: '/camps',
+    },
+  ]
 
   return (
     <div className={styles.container}>

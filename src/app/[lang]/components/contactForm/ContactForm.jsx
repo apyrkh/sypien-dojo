@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './contactForm.module.css'
 import { getText } from '@/utils/textUtils.js'
-import Button from '@/components/button/Button'
+import Button from '@/app/[lang]/components/button/Button'
 
 const placeholders = [
   {
