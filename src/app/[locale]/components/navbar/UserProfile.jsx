@@ -3,7 +3,7 @@ import Image from 'next/image'
 import styles from './userProfile.module.css'
 import { useSession, signIn, signOut } from 'next-auth/react'
 import Link from 'next/link'
-import Icon from '@/app/[lang]/components/icon/Icon'
+import Icon from '@/app/[locale]/components/icon/Icon'
 
 function DropdownItem({ text, url }) {
   return (

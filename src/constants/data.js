@@ -1,14 +1,14 @@
 import { getText } from '@/utils/textUtils'
 //start of mainImages imports
-import homePhoto from '@/app/[lang]/components/mainImage/img/homePhoto.jpeg'
-import newsPhoto from '@/app/[lang]/components/mainImage/img/newsPagePhoto.jpeg'
-import historyPhoto from '@/app/[lang]/components/mainImage/img/clubPhoto.jpeg'
-import achievementsPhoto from '@/app/[lang]/components/mainImage/img/achievementsPhoto.jpeg'
-import galleryPhoto from '@/app/[lang]/components/mainImage/img/galleryPhoto.jpeg'
-import campsPhoto from '@/app/[lang]/components/mainImage/img/campsPhoto.jpeg'
+import homePhoto from '@/app/[locale]/components/mainImage/img/homePhoto.jpeg'
+import newsPhoto from '@/app/[locale]/components/mainImage/img/newsPagePhoto.jpeg'
+import historyPhoto from '@/app/[locale]/components/mainImage/img/clubPhoto.jpeg'
+import achievementsPhoto from '@/app/[locale]/components/mainImage/img/achievementsPhoto.jpeg'
+import galleryPhoto from '@/app/[locale]/components/mainImage/img/galleryPhoto.jpeg'
+import campsPhoto from '@/app/[locale]/components/mainImage/img/campsPhoto.jpeg'
 //end of mainImages imports
 export const pageTitles = {
-  '/en': 'Train with the best',
+  '/': 'Train with the best',
   '/news': 'News',
   '/history': 'Club',
   '/achievements': 'Achievements',

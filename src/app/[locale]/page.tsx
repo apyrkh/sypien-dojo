@@ -1,15 +1,15 @@
 'use client'
-import Button from '@/app/[lang]/components/button/Button'
+import Button from '@/app/[locale]/components/button/Button'
 import styles from './page.module.css'
-import Coach from '@/app/[lang]/components/coach/Coach'
-import Slider from '@/app/[lang]/components/slider/Slider'
+import Coach from '@/app/[locale]/components/coach/Coach'
+import Slider from '@/app/[locale]/components/slider/Slider'
 import Link from 'next/link'
-import EmbedMap from '@/app/[lang]/components/EmbedMap/EmbedMap'
+import EmbedMap from '@/app/[locale]/components/EmbedMap/EmbedMap'
 import Image from 'next/image'
 import { useLoader } from '@/context/LoaderContext'
 import { useEffect } from 'react'
 import { getDictionary } from 'get-dictionary'
-import { Locale } from 'i18n-config'
+import { useTranslations } from 'next-intl'
 
 const coaches = [
   {
@@ -24,11 +24,8 @@ const coaches = [
   },
 ]
 
-export default function Home({
-  params: { lang },
-}: {
-  params: { lang: Locale }
-}) {
+export default function Home() {
+  const t = useTranslations('Index')
   const { showLoader, hideLoader } = useLoader()
   // const dictionary = await getDictionary()
   useEffect(() => {
@@ -49,6 +46,7 @@ export default function Home({
       <section className="news">
         <div className={styles.newsContainer}>
           <h1 className={`u-text-italic ${styles.heading}`}>
+            {t('title')}
             Important news{' '}
             <span className={styles.newsSmallText}>
               <Link href="/news">see all news -&gt;</Link>

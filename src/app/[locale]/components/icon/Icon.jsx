@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './icon.module.css'
-import '@/app/[lang]/animations.css'
+import '@/app/[locale]/animations.css'
 
 const Icon = ({ icon, size, animation }) => {
   return (

@@ -1,6 +1,6 @@
 import { React } from 'react'
 import styles from './page.module.css'
-import NewsBox from '@/components/newsBox/NewsBox'
+import NewsBox from '@/app/[locale]/components/newsBox/NewsBox'
 import Image from 'next/image'
 import { allNews } from '@/constants/data'
 import { getText } from '@/utils/textUtils'

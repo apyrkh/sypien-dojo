@@ -1,5 +1,5 @@
 'use client'
-import ContactUsButton from '@/app/[lang]/components/navbar/ContactUsButton'
+import ContactUsButton from '@/app/[locale]/components/navbar/ContactUsButton'
 import { useSession, signIn, signOut } from 'next-auth/react'
 import { usePathname } from 'next/navigation'
 import logoSrc from 'public/logo.png'
@@ -8,14 +8,16 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
 import styles from './navbar.module.css'
-import ThemeToggle from '@/app/[lang]/components/themeToggle/ThemeToggle'
+import ThemeToggle from '@/app/[locale]/components/themeToggle/ThemeToggle'
 // import { links } from '@/constants/data'
-import Icon from '@/app/[lang]/components/icon/Icon'
-// import { getDictionary } from 'get-dictionary'
+import Icon from '@/app/[locale]/components/icon/Icon'
 import UserProfile from './UserProfile'
+import { useLocale } from 'next-intl'
 
-const Navbar = ({ lang }) => {
-  const [open, setOpen] = useState(false)
+const Navbar = () => {
+  // const [open, setOpen] = useState(false)
+  const locale = useLocale()
+  console.log(locale)
   const { data: session, status } = useSession()
   const [toggleMenu, setToggleMenu] = useState(false)
   const pathname = usePathname()
@@ -23,27 +25,27 @@ const Navbar = ({ lang }) => {
   const links = [
     {
       title: getText('page.home'),
-      url: '/',
+      url: `${locale}/`,
     },
     {
       title: getText('page.news'),
-      url: '/news',
+      url: `${locale}/news`,
     },
     {
       title: getText('page.club'),
-      url: '/history',
+      url: `${locale}/history`,
     },
     {
       title: getText('page.achievements'),
-      url: '/achievements',
+      url: `${locale}/achievements`,
     },
     {
       title: getText('page.gallery'),
-      url: '/gallery',
+      url: `${locale}/gallery`,
     },
     {
       title: getText('page.camps'),
-      url: '/camps',
+      url: `${locale}/camps`,
     },
   ]
 
