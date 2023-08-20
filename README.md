@@ -11,6 +11,8 @@
 - `FACEBOOK_ID` facebook app ID
 - `FACEBOOK_SECRET` facebook app secret
 - `FACEBOOK_WATCHED_PAGES_IDS` comma-separated list of watched facebook pages
+- `TOKEN_SECRET` token secret key
+- `TOKEN_VECTOR` token initialization vector
 
 ### Scripts 
 

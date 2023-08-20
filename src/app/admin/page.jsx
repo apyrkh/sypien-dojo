@@ -22,7 +22,7 @@ export default async function AdminPage() {
                 <th>Page Name</th>
                 <th>Access Token</th>
                 <th>Expires at</th>
-                <th>Last Synchronized At</th>
+                <th>Last Synchronized at</th>
               </tr>
             </thead>
             <tbody>
@@ -30,7 +30,7 @@ export default async function AdminPage() {
                 <tr key={e.id} className={styles.dataRow}>
                   <td>{e.pageId}</td>
                   <td>{e.pageName}</td>
-                  <td>{'***' + e.accessToken.slice(-3)}</td>
+                  <td>*****</td>
                   <td>{formatDate(e.expiresAt)}</td>
                   <td>
                     {e.lastSynchronizedAt ? e.lastSynchronizedAt : 'Unknown'}

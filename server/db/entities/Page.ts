@@ -15,10 +15,7 @@ export class Page {
   @Property({ type: 'string' })
   pageName: string
 
-  @Property({
-    type: 'string',
-    serializer: (value) => `*****${value.slice(-4)}`,
-  })
+  @Property({ type: 'string', columnType: 'varchar(455)' })
   accessToken: string
 
   @Property({ type: 'datetime' })

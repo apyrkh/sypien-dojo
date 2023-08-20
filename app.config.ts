@@ -11,4 +11,8 @@ export const appConfig = {
     appSecret: process.env.FACEBOOK_SECRET!,
     watchedPagesIds: process.env.FACEBOOK_WATCHED_PAGES_IDS!.split(','),
   },
+  token: {
+    secret: process.env.TOKEN_SECRET!,
+    vector: process.env.TOKEN_VECTOR!,
+  },
 }

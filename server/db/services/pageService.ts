@@ -1,18 +1,24 @@
+import { wrap } from '@mikro-orm/core'
+import { encrypt } from '@server/encryptionUtils'
 import { Page } from '../entities/Page'
 import { getOrm } from '../orm'
+
+const mapPage = (page: Page) => {
+  return wrap(page).toObject()
+}
 
 export const getPages = async () => {
   const orm = await getOrm()
   const em = orm.em.fork()
-
-  return em.find(Page, { provider: 'facebook' })
+  const pages = await em.find(Page, { provider: 'facebook' })
+  return pages.map(mapPage)
 }
 
 export const getPage = async (id: string) => {
   const orm = await getOrm()
   const em = orm.em.fork()
-
-  return em.findOne(Page, id)
+  const page = await em.findOne(Page, id)
+  return page ? mapPage(page) : null
 }
 
 export const createUpdatePage = async (pageData: {
@@ -38,7 +44,7 @@ export const createUpdatePage = async (pageData: {
   }
 
   page.pageName = pageData.pageName
-  page.accessToken = pageData.accessToken
+  page.accessToken = encrypt(pageData.accessToken)
   page.tokenType = pageData.tokenType
   page.expiresAt = pageData.expiresAt
 
