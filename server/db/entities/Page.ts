@@ -6,10 +6,10 @@ export class Page {
   @PrimaryKey({ type: 'uuid' })
   id: string = crypto.randomUUID()
 
-  @Property({ type: 'string' })
+  @Property({ type: 'string', columnType: 'varchar(16)' })
   provider: string
 
-  @Property({ type: 'string' })
+  @Property({ type: 'string', columnType: 'varchar(16)' })
   providerPageId: string
 
   @Property({ type: 'string' })
@@ -21,7 +21,7 @@ export class Page {
   @Property({ type: 'datetime' })
   tokenExpiresAt: Date
 
-  @Property({ type: 'string' })
+  @Property({ type: 'string', columnType: 'varchar(10)' })
   tokenType: string
 
   @Property({ type: 'datetime', nullable: true })
