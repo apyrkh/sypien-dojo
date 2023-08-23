@@ -26,14 +26,16 @@ export default async function AdminPage() {
               </tr>
             </thead>
             <tbody>
-              {pages.map((e) => (
-                <tr key={e.id} className={styles.dataRow}>
-                  <td>{e.pageId}</td>
-                  <td>{e.pageName}</td>
+              {pages.map((page) => (
+                <tr key={page.id} className={styles.dataRow}>
+                  <td>{page.providerPageId}</td>
+                  <td>{page.name}</td>
                   <td>*****</td>
-                  <td>{formatDate(e.expiresAt)}</td>
+                  <td>{formatDate(page.tokenExpiresAt)}</td>
                   <td>
-                    {e.lastSynchronizedAt ? e.lastSynchronizedAt : 'Unknown'}
+                    {page.lastSynchronizedAt
+                      ? page.lastSynchronizedAt
+                      : 'Unknown'}
                   </td>
                 </tr>
               ))}

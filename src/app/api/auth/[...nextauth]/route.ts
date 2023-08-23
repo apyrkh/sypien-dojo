@@ -33,11 +33,13 @@ export const authOptions: NextAuthOptions = {
 
         await createUpdatePage({
           provider: account.provider,
-          pageId: pageData.id,
-          pageName: pageData.name,
+          providerPageId: pageData.id,
+          name: pageData.name,
           accessToken: extendedToken.access_token,
+          tokenExpiresAt: dayjs()
+            .add(extendedToken.expires_in, 'seconds')
+            .toDate(),
           tokenType: extendedToken.token_type,
-          expiresAt: dayjs().add(extendedToken.expires_in, 'seconds').toDate(),
         })
 
         return true

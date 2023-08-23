@@ -23,11 +23,11 @@ export const getPage = async (id: string) => {
 
 export const createUpdatePage = async (pageData: {
   provider: string
-  pageId: string
-  pageName: string
+  providerPageId: string
+  name: string
   accessToken: string
+  tokenExpiresAt: Date
   tokenType: string
-  expiresAt: Date
 }) => {
   const orm = await getOrm()
   const em = orm.em.fork()
@@ -35,18 +35,18 @@ export const createUpdatePage = async (pageData: {
   const pageRepository = em.getRepository(Page)
   let page = await pageRepository.findOne({
     provider: pageData.provider,
-    pageId: pageData.pageId,
+    providerPageId: pageData.providerPageId,
   })
   if (!page) {
     page = new Page()
     page.provider = pageData.provider
-    page.pageId = pageData.pageId
+    page.providerPageId = pageData.providerPageId
   }
 
-  page.pageName = pageData.pageName
+  page.name = pageData.name
   page.accessToken = encrypt(pageData.accessToken)
+  page.tokenExpiresAt = pageData.tokenExpiresAt
   page.tokenType = pageData.tokenType
-  page.expiresAt = pageData.expiresAt
 
   await em.persistAndFlush(page)
 

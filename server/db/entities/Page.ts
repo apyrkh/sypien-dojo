@@ -1,7 +1,7 @@
 import { Entity, PrimaryKey, Property, Unique } from '@mikro-orm/core'
 
 @Entity()
-@Unique({ properties: ['provider', 'pageId'] })
+@Unique({ properties: ['provider', 'providerPageId'] })
 export class Page {
   @PrimaryKey({ type: 'uuid' })
   id: string = crypto.randomUUID()
@@ -10,16 +10,16 @@ export class Page {
   provider: string
 
   @Property({ type: 'string' })
-  pageId: string
+  providerPageId: string
 
   @Property({ type: 'string' })
-  pageName: string
+  name: string
 
   @Property({ type: 'string', columnType: 'varchar(455)' })
   accessToken: string
 
   @Property({ type: 'datetime' })
-  expiresAt: Date
+  tokenExpiresAt: Date
 
   @Property({ type: 'string' })
   tokenType: string
