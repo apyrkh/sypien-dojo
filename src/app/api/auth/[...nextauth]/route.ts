@@ -3,10 +3,26 @@ import { createUpdatePage } from '@server/db/services/pageService'
 import { getExtendedAccessToken } from '@server/fb/services/fbOauthService'
 import { getPageData } from '@server/fb/services/fbPageService'
 import dayjs from 'dayjs'
-import NextAuth from 'next-auth'
+import NextAuth, { Account } from 'next-auth'
 import type { NextAuthOptions } from 'next-auth'
 import Facebook from 'next-auth/providers/facebook'
 import { appConfig } from '../../../../../app.config'
+
+const createUpdatePageData = async (pageId: string, account: Account) => {
+  const pageData = await getPageData(pageId, account.access_token!)
+
+  // @TODO: implement to not extend token every time
+  const extendedToken = await getExtendedAccessToken(pageData.access_token)
+
+  await createUpdatePage({
+    provider: account.provider,
+    providerPageId: pageData.id,
+    name: pageData.name,
+    accessToken: extendedToken.access_token,
+    tokenExpiresAt: dayjs().add(extendedToken.expires_in, 'seconds').toDate(),
+    tokenType: extendedToken.token_type,
+  })
+}
 
 export const authOptions: NextAuthOptions = {
   // @ts-expect-error: issues in adapter
@@ -15,33 +31,16 @@ export const authOptions: NextAuthOptions = {
     async signIn({ user, account, profile }) {
       if (!account || !account.access_token) return false
 
+      for (const pageId of appConfig.fb.watchedPagesIds) {
+        await createUpdatePageData(pageId, account)
+      }
+
       // @TODO: remove consoles
       console.log('user', user)
       console.log('account', account)
       console.log('profile', profile)
 
       try {
-        const pageData = await getPageData(
-          appConfig.fb.watchedPagesIds[0],
-          account.access_token,
-        )
-
-        // @TODO: implement to not extend token every time
-        const extendedToken = await getExtendedAccessToken(
-          pageData.access_token,
-        )
-
-        await createUpdatePage({
-          provider: account.provider,
-          providerPageId: pageData.id,
-          name: pageData.name,
-          accessToken: extendedToken.access_token,
-          tokenExpiresAt: dayjs()
-            .add(extendedToken.expires_in, 'seconds')
-            .toDate(),
-          tokenType: extendedToken.token_type,
-        })
-
         return true
       } catch (e) {
         console.error(e)

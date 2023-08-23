@@ -18,8 +18,9 @@ export default async function AdminPage() {
           <table className={styles.table}>
             <thead>
               <tr className={styles.mainRow}>
-                <th>Page Id</th>
-                <th>Page Name</th>
+                <th>Id</th>
+                <th>Provider Page Id</th>
+                <th>Name</th>
                 <th>Access Token</th>
                 <th>Expires at</th>
                 <th>Last Synchronized at</th>
@@ -28,6 +29,7 @@ export default async function AdminPage() {
             <tbody>
               {pages.map((page) => (
                 <tr key={page.id} className={styles.dataRow}>
+                  <td>{page.id}</td>
                   <td>{page.providerPageId}</td>
                   <td>{page.name}</td>
                   <td>*****</td>
