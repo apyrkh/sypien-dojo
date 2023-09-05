@@ -1,3 +1,4 @@
+import { getPagePosts } from '@server/db/services/pagePostService'
 import { React } from 'react'
 import styles from './page.module.css'
 import NewsBox from '@/components/newsBox/NewsBox'
