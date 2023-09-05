@@ -1,4 +1,4 @@
-import { transformAttachmentToPhotos } from '@/app/api/fb/fbUtils'
+import { transformAttachmentToPhotos } from '@/app/api/page/fbUtils'
 import { createUpdatePagePost } from '@server/db/services/pagePostService'
 import { getPage, updatePage } from '@server/db/services/pageService'
 import { decrypt } from '@server/encryptionUtils'

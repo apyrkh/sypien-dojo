@@ -54,7 +54,9 @@ const newsBoxes = [
   },
 ]
 
-const News = () => {
+const News = async () => {
+  const posts = await getPagePosts()
+
   return (
     <main>
       <div className={styles.mainNewsContainer}>
@@ -65,6 +67,7 @@ const News = () => {
           className={styles.mainNewsPhoto}
         />
       </div>
+
       <div className={styles.allNewsContainer}>
         <h3 className={styles.allNewsTitle}>{allNews}</h3>
         <div className={styles.allNews}>
@@ -78,6 +81,10 @@ const News = () => {
           ))}
         </div>
       </div>
+
+      <pre style={{ whiteSpace: 'pre-wrap' }}>
+        {JSON.stringify(posts, null, 2)}
+      </pre>
     </main>
   )
 }

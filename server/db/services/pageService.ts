@@ -10,7 +10,7 @@ const mapPage = (page: Page) => {
 export const getPages = async () => {
   const orm = await getOrm()
   const em = orm.em.fork()
-  const pages = await em.find(Page, { provider: 'facebook' })
+  const pages = await em.find(Page, { provider: 'facebook' }, { limit: 10 })
   return pages.map(mapPage)
 }
 

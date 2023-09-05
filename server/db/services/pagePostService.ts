@@ -2,6 +2,12 @@ import { Page } from '@server/db/entities/Page'
 import { PagePost } from '@server/db/entities/PagePost'
 import { getOrm } from '@server/db/orm'
 
+export const getPagePosts = async () => {
+  const orm = await getOrm()
+  const em = orm.em.fork()
+  return await em.find(PagePost, {}, { limit: 10 })
+}
+
 export const createUpdatePagePost = async (postData: {
   page: Page
   providerPostId: string
