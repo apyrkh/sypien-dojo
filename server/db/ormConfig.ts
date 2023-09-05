@@ -1,7 +1,8 @@
 import { defaultEntities } from '@auth/mikro-orm-adapter'
-import { appConfig } from '../../app.config'
-import { Page } from '@server/db/entities/Page'
 import { defineConfig } from '@mikro-orm/postgresql'
+import { Page } from '@server/db/entities/Page'
+import { PagePost } from '@server/db/entities/PagePost'
+import { appConfig } from '../../app.config'
 
 export const getOrmConfig = () =>
   defineConfig({
@@ -9,7 +10,7 @@ export const getOrmConfig = () =>
     dbName: appConfig.db.dbName,
     user: appConfig.db.dbUser,
     password: appConfig.db.dbPassword,
-    entities: [...Object.values(defaultEntities), Page],
+    entities: [...Object.values(defaultEntities), Page, PagePost],
     discovery: { disableDynamicFileAccess: false },
     forceUtcTimezone: true,
   })

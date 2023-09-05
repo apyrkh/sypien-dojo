@@ -52,3 +52,23 @@ export const createUpdatePage = async (pageData: {
 
   return page
 }
+
+export const updatePage = async (
+  id: string,
+  pageData: {
+    lastSynchronizedAt: Date
+  },
+) => {
+  const orm = await getOrm()
+  const em = orm.em.fork()
+  const page = await em.findOne(Page, id)
+  if (!page) {
+    return null
+  }
+
+  page.lastSynchronizedAt = pageData.lastSynchronizedAt
+
+  await em.persistAndFlush(page)
+
+  return page
+}
