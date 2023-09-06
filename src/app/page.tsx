@@ -12,18 +12,54 @@ import { useEffect } from 'react'
 const coaches = [
   {
     name: 'Shihan Agnieszka Sypien',
+    classification: [
+      '5 Dan',
+      'Trener Klasy I Karate',
+      'Instruktor fitness, specjalista ds. dietetyki',
+    ],
+    titleDescription:
+      'Jedna z najbardziej utytułowanych polskich zawodniczek karate kyokushin na Świecie:',
+    titles: [
+      '3 krotna mistrzyni Świata',
+      '14 krotna mistrzyni Europy',
+      'mistrzyni obu Ameryk',
+      'zdobywczyni pucharu Europy, Rosji i Polski',
+      'wielokrotna mistrzyni Polski.',
+    ],
     description:
-      'V Dan Trener Klasy I Karate Instruktor fitness, specjalista ds. dietetyki. Jedna z najbardziej utytułowanych polskich zawodniczek karate kyokushin na Świecie: -3 krotna mistrzyni Świata -14 krotna mistrzyni Europy – mistrzyni obu Ameryk – zdobywczyni pucharu Europy, Rosji i Polski. – wielokrotna mistrzyni Polski. Kilkunastokrotna laureatka plebiscytu na ”Najlepszego Sportowca Dolnego Śląska” Organizowanego przez Słowo Sportowe i Gazetę Wrocławską. W 2005 roku wybrana przez czytelników i kapitułę Najlepszym Sportowcem Dolnego Śląska. Założycielka klubu i obecnie Prezes Wrocławskiego Klubu Karate Kyokushin- A i S Sypień, który powstał w 2009 roku. Wraz z mężem Sylwestrem prowadzi treningi dla grup przedszkolnych , szkolnych, młodzieży, dorosłych i kadry zawodniczej. Do sukcesów trenerskich sensei Agnieszki należą medale podopiecznych na zawodach rangi mistrzostw Europy, pucharu Europy, Polski, a także turniejach ogólno-polskich najmłodszych adeptów klubu .',
+      'Kilkunastokrotna laureatka plebiscytu na ”Najlepszego Sportowca Dolnego Śląska” Organizowanego przez Słowo Sportowe i Gazetę Wrocławską. W 2005 roku wybrana przez czytelników i kapitułę Najlepszym Sportowcem Dolnego Śląska.',
   },
   {
     name: 'Sensei Sylwester Sypien',
+    classification: [
+      'IV Dan',
+      'Trener Klasy I Karate',
+      'Wielokrotny laureat plebiscytu na ”Najlepszego Trenera Dolnego Śląska Słowa Sportowego”',
+    ],
+    titleDescription:
+      'Jedna z najbardziej utytułowanych polskich zawodniczek karate kyokushin na Świecie:',
+    titles: [
+      'Wielokrotny mistrz Europy obu Ameryk, Polski',
+      'Mistrz świata kategorii masters',
+    ],
     description:
-      'IV dan Trener Klasy I Karate Wielokrotny laureat plebiscytu na ”Najlepszego Trenera Dolnego Śląska Słowa Sportowego”, posiadacz brązowej odznaki Ministra Sportu i Turystyki ” Za Zasługi Dla Sportu” trener Kadry Narodowej Karate Kyokushin IKO . Wielokrotny mistrz Europy, obu Ameryk, Polski, mistrz świata kategorii masters. Trener Wrocławskiego Klubu Karate A i S Sypień od 2009 roku. Przez ten czas jego zawodnicy zdobywali wielokrotnie tytuł drużynowego Mistrza Polski, Pucharu Polski, Makroregionu Dolnośląskiego. Największym trenerskim osiągnięciem było zajęcie I i II miejsca w Mistrzostwach Europy Open Karate Kyokushin w Sosnowcu w 2015 roku.',
+      'Przez ten czas jego zawodnicy zdobywali wielokrotnie tytuł drużynowego Mistrza Polski, Pucharu Polski, Makroregionu Dolnośląskiego. Największym trenerskim osiągnięciem było zajęcie I i II miejsca w Mistrzostwach Europy Open Karate Kyokushin w Sosnowcu w 2015 roku.',
   },
   {
     name: 'Sensei Patryk Sypien',
+    classification: [
+      'III Dan',
+      'Instruktor Sportu Wychowany na matach treningowych',
+    ],
+    titleDescription:
+      'Najlepszy zawodnik klubu Ichiban Sypień Dojo. Jego Osiągnięcia to:',
+    titles: [
+      '2 krotny Mistrz Europy',
+      '5 krotny Mistrz Polski Open',
+      '5 krotny Mistrzostw Polski Wagowych',
+    ],
     description:
-      'III Dan Instruktor Sportu Wychowany na matach treningowych. Syn najbardziej utytułowanego małżeństwa w Świecie karate. Uczestnik wielu prestiżowych szkoleń i obozów , swoją wiedzą i doświadczeniem dzieli się z podopiecznymi klubu. Uwielbia towarzyszyć młodszym podopiecznym na zawodach w roli sekundanta, potrafi zmobilizować ich do przezwyciężania własnych słabości. W życiu codziennym oaza spokoju, a na zawodach prawdziwy wojownik. Obecnie to najlepszy zawodnik klubu Ichiban Sypień Dojo. Jego Osiągnięcia to: 2 krotny Mistrz Europy. 5 krotny Mistrz Polski Open. 5 krotny Mistrzostw Polski Wagowych',
+      'Syn najbardziej utytułowanego małżeństwa w Świecie karate. Uczestnik wielu prestiżowych szkoleń i obozów , swoją wiedzą i doświadczeniem dzieli się z podopiecznymi klubu. ',
   },
 ]
 
@@ -106,6 +142,9 @@ export default function Home() {
             <Coach
               key={index}
               name={coach.name}
+              classification={coach.classification}
+              titleDescription={coach.titleDescription}
+              titles={coach.titles}
               description={coach.description}
               direction={index % 2}
             />
