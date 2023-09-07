@@ -1,36 +1,43 @@
 'use client'
-// import { useState } from 'react'
+import { useState } from 'react'
 import styles from './supportedPagesTable.module.css'
 import { formatDate } from '@/utils/formatters'
 import { useLoader } from '@/context/LoaderContext'
 
 const SupportedPagesTable = ({ pages }) => {
-  //   const [pageData, setPageData] = useState(null)
   const { showLoader, hideLoader } = useLoader()
-  const handleSyncButton = async (page) => {
-    try {
-      showLoader()
-      await fetch(`/api/page/${page.id}/feed`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          //   Authorization: `Bearer ${page.accessToken}`,
-        },
-      })
-        .then((response) => {
-          if (!response.ok) {
-            console.error('Sync failed')
-            hideLoader()
-          }
-          return response.json()
+  const [pagesData, setPagesData] = useState(pages)
+
+  const handleSyncButton = async () => {
+    showLoader()
+    const updatedPagesData = []
+    for (let i = 0; i < pages.length; i++) {
+      try {
+        await fetch(`/api/page/${pages[i].id}/feed`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            //   Authorization: `Bearer ${page.accessToken}`,
+          },
         })
-        .then((data) => {
-          console.log('success', data)
-          hideLoader()
-        })
-    } catch (error) {
-      throw new Error(`Error syncing: ${error}`)
+          .then((response) => {
+            if (!response.ok) {
+              console.error('Sync failed')
+              hideLoader()
+            }
+            return response.json()
+          })
+          .then((data) => {
+            console.log('success', data)
+            updatedPagesData.push(data)
+          })
+      } catch (error) {
+        throw new Error(`Error syncing: ${error}`)
+      }
     }
+    setPagesData(updatedPagesData)
+    console.log(pagesData)
+    hideLoader()
   }
   return (
     <div className={styles.tableContainer}>
@@ -47,7 +54,7 @@ const SupportedPagesTable = ({ pages }) => {
           </tr>
         </thead>
         <tbody>
-          {pages.map((page) => (
+          {pagesData.map((page) => (
             <tr key={page.id} className={styles.dataRow}>
               <td>{page.id}</td>
               <td>{page.providerPageId}</td>
@@ -55,16 +62,13 @@ const SupportedPagesTable = ({ pages }) => {
               <td>*****</td>
               <td>{formatDate(page.tokenExpiresAt)}</td>
               <td>{formatDate(page.lastSynchronizedAt)}</td>
-              <button
-                className={styles.syncButton}
-                onClick={() => handleSyncButton(page)}
-              >
-                Sync
-              </button>
             </tr>
           ))}
         </tbody>
       </table>
+      <button className={styles.syncButton} onClick={() => handleSyncButton()}>
+        Sync
+      </button>
     </div>
   )
 }
