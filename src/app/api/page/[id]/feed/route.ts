@@ -13,7 +13,7 @@ export async function POST(
   try {
     const page = await getPage(id)
     if (!page) {
-      throw new Error('Page no found')
+      throw new Error('Page not found')
     }
     const feed = await getPageFeed({
       pageId: page.providerPageId,

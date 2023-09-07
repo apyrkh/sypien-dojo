@@ -1,0 +1,40 @@
+.tableContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.h2 {
+  color: var(--heading-color);
+}
+
+.table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+tr.mainRow > th {
+  color: var(--primary-color);
+  background-color: var(--accent-color);
+}
+
+tr.mainRow > th,
+tr.dataRow > td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  font-size: 16px;
+  padding: 10px 20px;
+}
+
+.syncButton {
+  background-color: var(--accent-color);
+  padding: 10px 20px;
+  color: var(--primary-color);
+  transition: 0.3s ease;
+}
+
+.syncButton:hover {
+  background-color: var(--secondary-color);
+}
