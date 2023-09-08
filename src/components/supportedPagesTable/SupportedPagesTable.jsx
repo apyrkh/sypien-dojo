@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 import styles from './supportedPagesTable.module.css'
-import { formatDate, formatDateString } from '@/utils/formatters'
+import { formatDateString } from '@/utils/formatters'
 import { useLoader } from '@/context/LoaderContext'
 
 const SupportedPagesTable = ({ pages }) => {
