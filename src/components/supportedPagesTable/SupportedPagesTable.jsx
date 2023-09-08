@@ -45,8 +45,8 @@ const SupportedPagesTable = ({ pages }) => {
       <table className={styles.table}>
         <thead>
           <tr className={styles.mainRow}>
-            <th>Id</th>
-            <th>Provider Page Id</th>
+            <th>ID</th>
+            <th>Provider Page ID</th>
             <th>Name</th>
             <th>Access Token</th>
             <th>Expires at</th>
@@ -67,7 +67,7 @@ const SupportedPagesTable = ({ pages }) => {
         </tbody>
       </table>
       <button className={styles.syncButton} onClick={() => handleSyncButton()}>
-        Sync
+        Synchronize
       </button>
     </div>
   )
