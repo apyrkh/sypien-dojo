@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 import styles from './supportedPagesTable.module.css'
-import { formatDate } from '@/utils/formatters'
+import { formatDate, formatDateString } from '@/utils/formatters'
 import { useLoader } from '@/context/LoaderContext'
 
 const SupportedPagesTable = ({ pages }) => {
@@ -23,7 +23,7 @@ const SupportedPagesTable = ({ pages }) => {
           .then((response) => {
             if (!response.ok) {
               console.error('Sync failed')
-              hideLoader()
+              // hideLoader()
             }
             return response.json()
           })
@@ -36,7 +36,7 @@ const SupportedPagesTable = ({ pages }) => {
       }
     }
     setPagesData(updatedPagesData)
-    console.log(pagesData)
+    console.log(updatedPagesData)
     hideLoader()
   }
   return (
@@ -60,8 +60,8 @@ const SupportedPagesTable = ({ pages }) => {
               <td>{page.providerPageId}</td>
               <td>{page.name}</td>
               <td>*****</td>
-              <td>{formatDate(page.tokenExpiresAt)}</td>
-              <td>{formatDate(page.lastSynchronizedAt)}</td>
+              <td>{formatDateString(page.tokenExpiresAt)}</td>
+              <td>{formatDateString(page.lastSynchronizedAt)}</td>
             </tr>
           ))}
         </tbody>
