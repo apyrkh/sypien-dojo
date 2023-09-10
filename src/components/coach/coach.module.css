@@ -20,6 +20,21 @@
   font-weight: bold;
 }
 
+.classification {
+  color: var(--font-color);
+  font-weight: bold;
+  opacity: 0.6;
+  font-size: 14px;
+}
+
+.titlesList {
+  padding: 10px 0;
+  list-style: disc;
+  padding-left: 20px;
+  opacity: 0.8;
+  color: var(--font-color);
+}
+
 .desc {
   opacity: 0.7;
 }
@@ -44,6 +59,10 @@
   }
 
   .desc {
+    font-size: 12px;
+  }
+
+  .titlesList {
     font-size: 12px;
   }
 }
