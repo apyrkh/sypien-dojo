@@ -31,13 +31,12 @@ const SupportedPagesTable = ({ pages }) => {
           )
           if (indexToUpdate !== -1) {
             pagesData[indexToUpdate] = data
-            setPagesData([...pagesData]) // Assuming setPagesData is used to update the state.
+            setPagesData([...pagesData])
           }
         })
     } catch (error) {
       throw new Error(`Error syncing: ${error}`)
     } finally {
-      console.log(pagesData)
       hideLoader()
     }
   }

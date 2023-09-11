@@ -11,7 +11,20 @@ const BlockLoader = () => {
     <Portal>
       <div className={styles.modal}>
         <div className={styles.overlay}>
-          <div className={styles.content}>Loading...</div>
+          <div className={styles.ldsSpinner}>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
         </div>
       </div>
     </Portal>
