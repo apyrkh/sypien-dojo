@@ -11,35 +11,29 @@ const SupportedPagesTable = ({ pages }) => {
   const handleSyncButton = async (pageId) => {
     showLoader()
     try {
-      await fetch(`/api/page/${pageId}/feed`, {
+      const response = await fetch(`/api/page/${pageId}/feed`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          //   Authorization: `Bearer ${page.accessToken}`,
         },
       })
-        .then((response) => {
-          if (!response.ok) {
-            console.error('Sync failed')
+      const data = await response.json()
+
+      setPagesData((prevPagesData) => {
+        return prevPagesData.map((page) => {
+          if (page.id === pageId) {
+            return data
           }
-          return response.json()
+          return page
         })
-        .then((data) => {
-          console.log('Success', data)
-          const indexToUpdate = pagesData.findIndex(
-            (page) => page.id === pageId,
-          )
-          if (indexToUpdate !== -1) {
-            pagesData[indexToUpdate] = data
-            setPagesData([...pagesData])
-          }
-        })
+      })
     } catch (error) {
-      throw new Error(`Error syncing: ${error}`)
+      console.error(`Error syncing: ${error}`)
     } finally {
       hideLoader()
     }
   }
+
   return (
     <div className={styles.tableContainer}>
       <h2 className={styles.h2}>Supported Facebook pages</h2>
