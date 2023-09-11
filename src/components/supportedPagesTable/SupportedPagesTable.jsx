@@ -8,36 +8,38 @@ const SupportedPagesTable = ({ pages }) => {
   const { showLoader, hideLoader } = useLoader()
   const [pagesData, setPagesData] = useState(pages)
 
-  const handleSyncButton = async () => {
+  const handleSyncButton = async (pageId) => {
     showLoader()
-    const updatedPagesData = []
-    for (let i = 0; i < pages.length; i++) {
-      try {
-        await fetch(`/api/page/${pages[i].id}/feed`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            //   Authorization: `Bearer ${page.accessToken}`,
-          },
+    try {
+      await fetch(`/api/page/${pageId}/feed`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          //   Authorization: `Bearer ${page.accessToken}`,
+        },
+      })
+        .then((response) => {
+          if (!response.ok) {
+            console.error('Sync failed')
+          }
+          return response.json()
         })
-          .then((response) => {
-            if (!response.ok) {
-              console.error('Sync failed')
-              // hideLoader()
-            }
-            return response.json()
-          })
-          .then((data) => {
-            console.log('success', data)
-            updatedPagesData.push(data)
-          })
-      } catch (error) {
-        throw new Error(`Error syncing: ${error}`)
-      }
+        .then((data) => {
+          console.log('Success', data)
+          const indexToUpdate = pagesData.findIndex(
+            (page) => page.id === pageId,
+          )
+          if (indexToUpdate !== -1) {
+            pagesData[indexToUpdate] = data
+            setPagesData([...pagesData]) // Assuming setPagesData is used to update the state.
+          }
+        })
+    } catch (error) {
+      throw new Error(`Error syncing: ${error}`)
+    } finally {
+      console.log(pagesData)
+      hideLoader()
     }
-    setPagesData(updatedPagesData)
-    console.log(updatedPagesData)
-    hideLoader()
   }
   return (
     <div className={styles.tableContainer}>
@@ -51,6 +53,7 @@ const SupportedPagesTable = ({ pages }) => {
             <th>Access Token</th>
             <th>Expires at</th>
             <th>Last Synchronized at</th>
+            <th>Sync</th>
           </tr>
         </thead>
         <tbody>
@@ -62,13 +65,18 @@ const SupportedPagesTable = ({ pages }) => {
               <td>*****</td>
               <td>{formatDateString(page.tokenExpiresAt)}</td>
               <td>{formatDateString(page.lastSynchronizedAt)}</td>
+              <td>
+                <button
+                  className={styles.syncButton}
+                  onClick={() => handleSyncButton(page.id)}
+                >
+                  Synchronize
+                </button>
+              </td>
             </tr>
           ))}
         </tbody>
       </table>
-      <button className={styles.syncButton} onClick={() => handleSyncButton()}>
-        Synchronize
-      </button>
     </div>
   )
 }
