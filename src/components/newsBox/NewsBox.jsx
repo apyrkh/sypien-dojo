@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './newsBox.module.css'
 import Image from 'next/image'
 
-const NewsBox = ({ img, title, desc }) => {
+const NewsBox = ({ img, title, desc, createdAt }) => {
   return (
     <div>
       <div className={styles.container}>
@@ -16,7 +16,8 @@ const NewsBox = ({ img, title, desc }) => {
         </div>
         <div className={styles.text}>
           <h3 className={styles.title}>{title}</h3>
-          <p className={styles.desc}>{desc}</p>
+          <p className={styles.desc}>{`${desc.slice(0, 80)}...`}</p>
+          <p className={styles.createdAt}>Post date: {createdAt}</p>
         </div>
       </div>
     </div>

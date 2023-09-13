@@ -1,0 +1,23 @@
+.allNews {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  column-gap: 50px;
+  row-gap: 50px;
+}
+
+.feedInfo {
+  margin-top: 30px;
+}
+
+.noNews {
+  font-size: 20px;
+  font-weight: lighter;
+}
+
+@media screen and (max-width: 1024px) {
+  .allNews {
+    display: flex;
+    flex-direction: column;
+  }
+}

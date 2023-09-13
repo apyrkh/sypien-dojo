@@ -11,7 +11,11 @@
 }
 
 .container:hover .title {
-  color: var(--secondary-color);
+  opacity: 0.6;
+}
+
+.container:hover {
+  border-color: rgba(211, 211, 211, 0.632);
 }
 
 .photo {
@@ -39,6 +43,12 @@
 }
 
 .desc {
-  color: rgb(137, 136, 136);
+  opacity: 0.6;
   font-weight: lighter;
+}
+
+.createdAt {
+  color: rgba(137, 136, 136, 0.662);
+  font-weight: lighter;
+  font-size: 12px;
 }
