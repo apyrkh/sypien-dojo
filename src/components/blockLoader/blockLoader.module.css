@@ -22,11 +22,6 @@
   align-items: center;
 }
 
-/* .content {
-  color: white;
-  z-index: 10;
-} */
-
 .ldsSpinner {
   color: official;
   display: inline-block;
