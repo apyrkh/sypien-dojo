@@ -1,4 +1,13 @@
-const options = {
+const dateFormatOptions = {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+}
+export const formatDate = (date) => {
+  return new Intl.DateTimeFormat('en-US', dateFormatOptions).format(date)
+}
+
+const dateTimeFormatOptions = {
   year: 'numeric',
   month: 'long',
   day: 'numeric',
@@ -6,11 +15,7 @@ const options = {
   minute: 'numeric',
   hour12: false,
 }
-export const formatDate = (date) => {
-  return new Intl.DateTimeFormat('en-US', options).format(date)
-}
-
 export const formatDateString = (dateString) => {
   const date = new Date(dateString)
-  return new Intl.DateTimeFormat('en-US', options).format(date)
+  return new Intl.DateTimeFormat('en-US', dateTimeFormatOptions).format(date)
 }
