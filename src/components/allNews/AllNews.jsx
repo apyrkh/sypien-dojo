@@ -4,7 +4,7 @@ import NewsBox from '@/components/newsBox/NewsBox'
 import { formatDate } from '@/utils/formatters'
 import styles from './allNews.module.css'
 
-const AllNews = ({ posts }) => {
+const NewsFeed = ({ posts }) => {
   const [loadedPostsAmount, setloadedPostsAmount] = useState(6)
   const loadedPosts = posts.slice(0, loadedPostsAmount)
   const handleShowMore = () => {
@@ -38,4 +38,4 @@ const AllNews = ({ posts }) => {
   )
 }
 
-export default AllNews
+export default NewsFeed

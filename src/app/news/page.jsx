@@ -1,12 +1,11 @@
 import { getPagePosts } from '@server/db/services/pagePostService'
 import { React } from 'react'
 import styles from './page.module.css'
-// import NewsBox from '@/components/newsBox/NewsBox'
 import Image from 'next/image'
 import { allNews } from '@/constants/data'
 import { getText } from '@/utils/textUtils'
-import AllNews from '@/components/allNews/AllNews'
-// import { formatDate } from '@/utils/formatters'
+import NewsFeed from '@/components/allNews/AllNews'
+
 export const metadata = {
   title: `${getText('home.meta.title')} | ${getText('page.news')}`,
   description: getText('home.meta.description'),
@@ -28,7 +27,7 @@ const News = async () => {
 
       <div className={styles.allNewsContainer}>
         <h3 className={styles.allNewsTitle}>{allNews}</h3>
-        <AllNews posts={posts} />
+        <NewsFeed posts={posts} />
       </div>
     </main>
   )
