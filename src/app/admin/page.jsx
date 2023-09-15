@@ -1,8 +1,6 @@
 import { getPages } from '@server/db/services/pageService'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '../api/auth/[...nextauth]/route'
-// import styles from './admin.module.css'
-// import { formatDate } from '@/utils/formatters'
 import SupportedPagesTable from '@/components/supportedPagesTable/SupportedPagesTable'
 
 export default async function AdminPage() {
