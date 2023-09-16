@@ -8,10 +8,15 @@
   border-radius: 5px;
   cursor: pointer;
   overflow: hidden;
+  transition: 0.3s;
 }
 
 .container:hover .title {
-  color: var(--secondary-color);
+  opacity: 0.6;
+}
+
+.container:hover {
+  border-color: var(--font-color);
 }
 
 .photo {
@@ -39,6 +44,13 @@
 }
 
 .desc {
-  color: rgb(137, 136, 136);
+  opacity: 0.6;
   font-weight: lighter;
+}
+
+.createdAt {
+  color: var(--font-color);
+  font-weight: lighter;
+  font-size: 12px;
+  opacity: 0.6;
 }
