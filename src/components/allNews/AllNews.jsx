@@ -6,7 +6,10 @@ import styles from './allNews.module.css'
 
 const NewsFeed = ({ posts }) => {
   const [loadedPostsAmount, setloadedPostsAmount] = useState(6)
-  const loadedPosts = posts.slice(0, loadedPostsAmount)
+  const loadedPosts = posts
+    .slice(0, loadedPostsAmount)
+    .sort((a, b) => b.createdAt - a.createdAt)
+
   const handleShowMore = () => {
     setloadedPostsAmount((prev) => (prev += 6))
   }
