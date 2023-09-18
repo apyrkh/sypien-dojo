@@ -5,10 +5,9 @@ import { formatDate } from '@/utils/formatters'
 import styles from './allNews.module.css'
 
 const NewsFeed = ({ posts }) => {
+  posts = posts.sort((a, b) => b.createdAt - a.createdAt)
   const [loadedPostsAmount, setloadedPostsAmount] = useState(6)
-  const loadedPosts = posts
-    .slice(0, loadedPostsAmount)
-    .sort((a, b) => b.createdAt - a.createdAt)
+  const loadedPosts = posts.slice(0, loadedPostsAmount)
 
   const handleShowMore = () => {
     setloadedPostsAmount((prev) => (prev += 6))
